@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources — Partners in Parenting (PiP)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--canvas:#f4f8f4;--panel:#edf4ed;--surface:#e5f0e5;--text:#162016;--muted:#4e6456;--green:#1a8030;--deep:#0d5020;--amber:#c87a08;--max:1200px;--font:'Plus Jakarta Sans',system-ui,sans-serif;--shadow:color(display-p3 0.784 0.863 0.784) 0 0 0 1px inset}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font);background:var(--canvas);color:var(--text);font-size:15px;line-height:1.62;letter-spacing:-.2px;-webkit-font-smoothing:antialiased}
+    a{color:var(--deep);text-decoration:none} a:hover{text-decoration:underline} img{display:block;max-width:100%}
+    .container{max-width:var(--max);margin:0 auto;padding:0 32px}
+    @media(max-width:768px){.container{padding:0 20px}}
+
+    /* ── Navigation ── */
+    .nav{position:sticky;top:0;z-index:10;background:var(--canvas);box-shadow:rgba(0,0,0,.04) 0 0 0 1px;height:64px;display:flex;align-items:center}
+    .nav__inner{width:100%;max-width:var(--max);margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .nav__logo{display:flex;align-items:center;gap:10px;color:var(--text);font-weight:600;text-decoration:none}
+    .nav__logo img{height:38px}
+    .nav__links{display:flex;gap:32px;list-style:none}
+    .nav__links a{font-size:14px;font-weight:500;color:var(--text);text-decoration:none;transition:color .2s ease}
+    .nav__links a:hover{color:var(--green)}
+    .nav__links a[aria-current=page]{color:var(--green);border-bottom:2px solid var(--green);padding-bottom:2px}
+    .nav__hamburger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:4px}
+    .nav__hamburger span{width:22px;height:2px;background:var(--text);border-radius:2px}
+    .nav__mobile-menu{display:none}
+    @media(max-width:760px){
+      .nav__links{display:none}
+      .nav__hamburger{display:flex}
+      .nav__mobile-menu.is-open{display:flex;position:fixed;top:64px;left:0;right:0;flex-direction:column;background:var(--canvas);padding:16px 20px;border-top:1px solid #c8dcc8;box-shadow:0 4px 12px rgba(0,0,0,.08);z-index:99}
+      .nav__mobile-menu a{padding:12px 8px;border-bottom:1px solid #e5efe5;color:var(--text);text-decoration:none}
+    }
+
+    /* ── Page Hero ── */
+    .page-hero{padding:88px 0 56px;background:var(--canvas)}
+    .eyebrow{font-size:12px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+    .page-title{font-size:56px;line-height:1.08;letter-spacing:-1.7px;font-weight:500;margin-bottom:22px}
+    .lead{font-size:18px;line-height:1.65;max-width:780px}
+    @media(max-width:768px){.page-title{font-size:38px;letter-spacing:-1.1px}}
+
+    /* ── Resource Sections ── */
+    .resource-section{padding:64px 0}
+    .section-head{max-width:760px;margin-bottom:28px}
+    .section-head h2{font-size:34px;line-height:1.16;letter-spacing:-.9px;margin-bottom:12px}
+    .section-head p{font-size:16px;color:var(--muted)}
+    .resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+    .resource-card{background:#fff;box-shadow:var(--shadow);border-radius:10px;padding:26px;display:flex;flex-direction:column;gap:12px}
+    .resource-card h3{font-size:20px;line-height:1.35;letter-spacing:-.25px}
+    .resource-card p{color:var(--text)}
+    .resource-meta{font-size:13px;font-weight:600;color:var(--muted)}
+    .resource-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:8px}
+    @media(max-width:760px){.resource-grid{grid-template-columns:1fr}.resource-section{padding:48px 0}}
+
+    /* ── Buttons ── */
+    .btn{display:inline-flex;width:max-content;align-items:center;gap:8px;border-radius:32px;padding:12px 18px;background:var(--green);color:#fff;font-weight:600;font-size:14px;text-decoration:none;transition:background .2s ease}
+    .btn:hover{background:var(--deep);color:#fff;text-decoration:none}
+    .btn-light{background:var(--surface);color:var(--text)}
+    .btn-light:hover{background:#d6e8d6;color:var(--text)}
+
+    /* ── Other Resources Toggle ── */
+    .other-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;background:#fff;border:0;box-shadow:var(--shadow);border-radius:10px;padding:24px 28px;font-family:var(--font);cursor:pointer;text-align:left;transition:background .18s ease}
+    .other-toggle span:first-child{font-size:24px;font-weight:600;letter-spacing:-.55px;color:var(--text);line-height:1.3}
+    .other-toggle span:nth-child(2){font-size:15px;color:var(--muted);line-height:1.45}
+    .chevron{width:34px;height:34px;border-radius:50%;background:var(--surface);color:var(--text);display:grid;place-items:center;flex:0 0 auto;transition:transform .22s ease,color .18s ease}
+    .other-toggle[aria-expanded=true] .chevron{transform:rotate(180deg);color:var(--green)}
+    .other-panel{margin-top:18px;background:#fff;padding:28px 32px 32px;border-radius:10px;box-shadow:var(--shadow)}
+    .other-panel[hidden]{display:none}
+    .other-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:34px}
+    .sub-resource h3{font-size:22px;line-height:1.28;letter-spacing:-.4px;margin-bottom:24px}
+    .service-list{display:grid;gap:22px}
+    .service-item{border-top:1px solid #d6e8d6;padding-top:24px;line-height:1.72}
+    .service-item:first-child{border-top:0;padding-top:0}
+    .service-item h4{font-size:17px;margin-bottom:8px;letter-spacing:-.2px}
+    .state-list{padding-left:20px;margin-top:14px;line-height:1.75}
+    .state-list li{margin:8px 0}
+    @media(max-width:760px){.other-grid{grid-template-columns:1fr}.other-toggle{align-items:flex-start}.other-toggle span:first-child{font-size:21px}}
+
+    /* ── Wave Dividers ── */
+    .wave-sep{display:block;line-height:0;margin:0;padding:0;overflow:hidden}
+    .wave-sep svg{display:block;width:100%;height:64px}
+    @media(max-width:768px){.wave-sep svg{height:40px}}
+
+    /* ── Footer — matches homepage ── */
+    .footer{background:#162016;padding:60px 0 0}
+    .footer__grid{display:grid;grid-template-columns:1.25fr .9fr minmax(360px,1.4fr);gap:48px;padding-bottom:48px;align-items:start}
+    .footer__logo{display:flex;align-items:center;text-decoration:none;margin-bottom:16px}
+    .footer__logo img{height:38px;width:auto;filter:none;opacity:1}
+    .footer__logo-name{font-size:14px;font-weight:600;color:rgba(255,255,255,.85);letter-spacing:-.18px;margin-left:10px;white-space:nowrap}
+    .footer__strapline{font-size:14px;color:rgba(255,255,255,.55);line-height:1.6;letter-spacing:-.16px;max-width:240px}
+    .footer__nav-heading{font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px}
+    .footer__nav-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+    .footer__nav-list a{font-size:14px;font-weight:500;color:rgba(255,255,255,.75);letter-spacing:-.18px;text-decoration:none;transition:color .2s ease}
+    .footer__nav-list a:hover{color:#fff;text-decoration:none}
+    .footer__pip-notice{background:#fffbf0;border:1.5px solid #e8c87a;border-radius:10px;padding:32px;display:flex;flex-direction:column;gap:20px;box-shadow:0 16px 38px rgba(0,0,0,.18)}
+    .footer__pip-notice-heading{font-size:21px;font-weight:700;line-height:1.32;color:#4a3100;letter-spacing:-.36px}
+    .footer__pip-notice-body{font-size:15px;color:#5c4200;line-height:1.6;letter-spacing:-.18px}
+    .btn-callout-cta{background:#c87a08;color:#fff;font-weight:600;box-shadow:0 2px 8px rgba(200,122,8,.35);padding:14px 22px;font-size:15px}
+    .btn-callout-cta:hover{background:#a86506;color:#fff;text-decoration:none}
+    .footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;align-items:center;justify-content:space-between}
+    .footer__copy{font-size:12px;color:rgba(255,255,255,.35);letter-spacing:-.14px}
+    @media(max-width:900px){.footer__grid{grid-template-columns:1fr 1fr;gap:36px}.footer__pip-notice{grid-column:span 2}}
+    @media(max-width:600px){.footer__grid{grid-template-columns:1fr}.footer__pip-notice{grid-column:span 1;padding:24px}}
+  </style>
+</head>
+<body>
+
+  <header class="nav" role="banner">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo" aria-label="Partners in Parenting - Home">
+        <img src="../images/PIP LOGO.png" alt="Partners in Parenting (PiP)" />
+        <span>Partners in Parenting</span>
+      </a>
+      <nav aria-label="Site navigation">
+        <ul class="nav__links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Resources</a></li>
+          <li><a href="../about/index.html">About Us</a></li>
+          <li><a href="../contact/index.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" id="nav-toggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav__mobile-menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
+      <a href="../index.html">Home</a>
+      <a href="index.html" aria-current="page">Resources</a>
+      <a href="../about/index.html">About Us</a>
+      <a href="../contact/index.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Resources</p>
+        <h1 class="page-title">Useful Resources for Parents &amp; Carers</h1>
+        <p class="lead">If you or your child want more information about depression and anxiety, or would like to speak to someone over the phone, please check out the following organisations and helplines. You'll also find some other resources referred to in the PiP modules.</p>
+      </div>
+    </section>
+
+    <!-- Wave: canvas → panel -->
+    <div class="wave-sep" aria-hidden="true" style="background:#f4f8f4;">
+      <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,28 C360,8 1080,56 1440,36 L1440,64 L0,64 Z" fill="#edf4ed"/>
+      </svg>
+    </div>
+
+    <!-- Section 1: Mental Health for Parents -->
+    <section class="resource-section" style="background:#edf4ed;" aria-labelledby="parents-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="parents-heading">Mental Health Resources for Parents/Carers</h2>
+          <p>Support services and information for parents and carers.</p>
+        </div>
+        <div class="resource-grid">
+          <article class="resource-card">
+            <h3>Beyond Blue</h3>
+            <p class="resource-meta">Phone: 1300 224 636</p>
+            <p>Learn more about depression and anxiety, or talk it through with support services at Beyond Blue.</p>
+            <div class="resource-actions">
+              <a class="btn" href="https://www.beyondblue.org.au/" target="_blank" rel="noopener noreferrer">Visit Beyond Blue</a>
+              <a class="btn btn-light" href="https://www.beyondblue.org.au/getsupport" target="_blank" rel="noopener noreferrer">Email or chat online</a>
+            </div>
+          </article>
+          <article class="resource-card">
+            <h3>Head to Health</h3>
+            <p>Head to Health provides access to trusted mental health and wellbeing information, online programs and digital resources.</p>
+            <div class="resource-actions">
+              <a class="btn" href="https://www.headtohealth.gov.au/" target="_blank" rel="noopener noreferrer">Visit Head to Health</a>
+            </div>
+          </article>
+          <article class="resource-card">
+            <h3>eheadspace</h3>
+            <p class="resource-meta">Phone: 1800 650 890</p>
+            <p>eheadspace is a confidential, free and secure space where young people aged 12 to 25 or their family can chat, email or speak on the phone with a qualified youth mental health professional.</p>
+            <div class="resource-actions">
+              <a class="btn" href="https://headspace.org.au/eheadspace/" target="_blank" rel="noopener noreferrer">Visit eheadspace</a>
+            </div>
+          </article>
+          <article class="resource-card">
+            <h3>Lifeline</h3>
+            <p class="resource-meta">Phone: 13 11 14</p>
+            <p>Lifeline provides access to crisis support, suicide prevention and mental health support services.</p>
+            <div class="resource-actions">
+              <a class="btn" href="https://www.lifeline.org.au/" target="_blank" rel="noopener noreferrer">Visit Lifeline</a>
+            </div>
+          </article>
+          <article class="resource-card">
+            <h3>Find a Psychologist</h3>
+            <p>If you would like to find a registered psychologist in your area, the Australian Psychological Society Find a Psychologist service can assist with this. You can also speak to your GP about getting a referral to a psychologist.</p>
+            <div class="resource-actions">
+              <a class="btn" href="https://www.psychology.org.au/Find-a-Psychologist" target="_blank" rel="noopener noreferrer">Find a Psychologist</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave: panel → canvas -->
+    <div class="wave-sep" aria-hidden="true" style="background:#edf4ed;">
+      <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,36 C360,56 1080,8 1440,28 L1440,64 L0,64 Z" fill="#f4f8f4"/>
+      </svg>
+    </div>
+
+    <!-- Section 2: Mental Health for Young People -->
+    <section class="resource-section" style="background:#f4f8f4;" aria-labelledby="youth-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="youth-heading">Mental Health Resources for Young People</h2>
+          <p>Information and support options for children, teenagers, and young adults.</p>
+        </div>
+        <div class="resource-grid">
+          <article class="resource-card">
+            <h3>Youth Beyond Blue</h3>
+            <p class="resource-meta">Phone: 1300 22 4636</p>
+            <p>Youth Beyond Blue's website for young people aged 12 to 15. If you need to talk to someone, find more information or find out where you can go to see someone contact the beyondblue support service.</p>
+            <div class="resource-actions">
+              <a class="btn" href="https://www.beyondblue.org.au/who-does-it-affect/young-people" target="_blank" rel="noopener noreferrer">Visit Youth Beyond Blue</a>
+            </div>
+          </article>
+          <article class="resource-card">
+            <h3>Headspace</h3>
+            <p>Headspace helps young people aged 12 to 25 who are going through a tough time, providing support for problems like depression, anxiety, bullying and body image.</p>
+            <div class="resource-actions">
+              <a class="btn" href="https://headspace.org.au/" target="_blank" rel="noopener noreferrer">Visit Headspace</a>
+            </div>
+          </article>
+          <article class="resource-card">
+            <h3>eheadspace</h3>
+            <p class="resource-meta">Phone: 1800 650 890</p>
+            <p>eheadspace is a confidential, free and secure space where young people aged 12 to 25 or their family can chat, email or speak on the phone with a qualified youth mental health professional.</p>
+            <div class="resource-actions">
+              <a class="btn" href="https://headspace.org.au/eheadspace/" target="_blank" rel="noopener noreferrer">Visit eheadspace</a>
+            </div>
+          </article>
+          <article class="resource-card">
+            <h3>Kids Helpline</h3>
+            <p class="resource-meta">Phone: 1800 55 1800</p>
+            <p>A free, private and confidential, telephone and online counselling service specifically for young people aged between 5 and 25.</p>
+            <div class="resource-actions">
+              <a class="btn" href="https://kidshelpline.com.au/" target="_blank" rel="noopener noreferrer">Visit Kids Helpline</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave: canvas → panel -->
+    <div class="wave-sep" aria-hidden="true" style="background:#f4f8f4;">
+      <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,24 C360,56 1080,8 1440,40 L1440,64 L0,64 Z" fill="#edf4ed"/>
+      </svg>
+    </div>
+
+    <!-- Section 3: Other Resources -->
+    <section class="resource-section" style="background:#edf4ed; padding-bottom: 80px;">
+      <div class="container">
+        <button class="other-toggle" type="button" aria-expanded="false" aria-controls="other-resources-panel" id="other-resources-toggle">
+          <span>Other Resources for Parents and Young People</span>
+          <span>Financial, legal, accommodation, and LGBTQIA+ supports</span>
+          <span class="chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="other-panel" id="other-resources-panel" hidden>
+          <div class="other-grid">
+            <article class="sub-resource">
+              <h3>Resources for LGBTQIA+ Young People</h3>
+              <div class="service-list">
+                <div class="service-item">
+                  <h4>qheadspace</h4>
+                  <p>A peer led online chat for LGBTQIA+ young people in Australia.</p>
+                </div>
+                <div class="service-item">
+                  <h4>QLife</h4>
+                  <p>Australia-wide, anonymous, peer support and referral for people wanting to talk about issues relating to sexuality, identity, gender, bodies, feelings, or relationships. Phone and web-chat available.</p>
+                </div>
+              </div>
+            </article>
+            <article class="sub-resource">
+              <h3>Resources for Financial, Accommodation, and Legal Advice</h3>
+              <p>The services listed below can provide referral information for families struggling with accommodation, finances, family violence, and other specialist services in each state.</p>
+              <div class="service-item"><h4>Youth Law Australia</h4><p>Free, confidential legal information and advice for young people under 25, Australia wide.</p></div>
+              <h4 style="margin-top:18px;">Services by state</h4>
+              <ul class="state-list">
+                <li>VIC — Victoria Legal Aid. Ph: 1300 792 387</li>
+                <li>NSW — Law Access. Ph: 1300 888 529</li>
+                <li>QLD — Queensland Legal Aid. Ph: 1300 651 188</li>
+                <li>ACT — ACT Legal Aid. Ph: 1300 654 314</li>
+                <li>TAS — Legal Aid Tasmania. Ph: 1300 366 611</li>
+                <li>WA — Legal Aid WA. Ph: 1300 650 579</li>
+                <li>SA — Legal Services Commission of SA. Ph: 1300 366 424</li>
+                <li>NT — NT Legal Aid. Ph: 1800 019 343</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Wave: panel → dark footer -->
+  <div class="wave-sep" aria-hidden="true" style="background:#edf4ed;">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,28 C360,64 1080,64 1440,24 L1440,64 L0,64 Z" fill="#162016"/>
+    </svg>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="../index.html" class="footer__logo" aria-label="Partners in Parenting – Home">
+            <img src="../images/PIP LOGO.png" alt="Partners in Parenting (PiP)" />
+            <span class="footer__logo-name">Partners in Parenting</span>
+          </a>
+          <p class="footer__strapline">An award-winning, evidence-based online parenting program by Monash University, supporting parents across Australia.</p>
+        </div>
+        <div class="footer__nav">
+          <p class="footer__nav-heading">Navigation</p>
+          <ul class="footer__nav-list">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="index.html">Resources</a></li>
+            <li><a href="../about/index.html">About Us</a></li>
+            <li><a href="../contact/index.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer__pip-notice" role="note" aria-label="Existing PiP+ account notice">
+          <p class="footer__pip-notice-heading">Do you have an existing account for PiP+?</p>
+          <p class="footer__pip-notice-body">The previous version of PiP+ at partnersinparenting.com.au is no longer taking new registrations. If you already signed up, you can still access your account.</p>
+          <a href="https://pip-plus.web.app/" class="btn btn-callout-cta" target="_blank" rel="noopener noreferrer">
+            Access PiP+
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Monash University. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var navToggle = document.getElementById('nav-toggle');
+    var mobileMenu = document.getElementById('mobile-menu');
+    navToggle.addEventListener('click', function() {
+      var isOpen = mobileMenu.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      mobileMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    });
+    var otherToggle = document.getElementById('other-resources-toggle');
+    var otherPanel = document.getElementById('other-resources-panel');
+    otherToggle.addEventListener('click', function() {
+      var isOpen = otherToggle.getAttribute('aria-expanded') === 'true';
+      otherToggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      otherPanel.hidden = isOpen;
+    });
+  </script>
+</body>
+</html>

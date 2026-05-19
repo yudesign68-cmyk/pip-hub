@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Partners in Parenting (PiP)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--canvas:#f4f8f4;--panel:#edf4ed;--surface:#e5f0e5;--text:#162016;--muted:#4e6456;--green:#1a8030;--deep:#0d5020;--amber:#c87a08;--max:1200px;--font:'Plus Jakarta Sans',system-ui,sans-serif;--shadow:color(display-p3 0.784 0.863 0.784) 0 0 0 1px inset}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font);background:var(--canvas);color:var(--text);font-size:15px;line-height:1.65;letter-spacing:-.2px;-webkit-font-smoothing:antialiased}
+    a{color:var(--deep);text-decoration:none} a:hover{text-decoration:underline} img{display:block;max-width:100%}
+    .container{max-width:var(--max);margin:0 auto;padding:0 32px}
+    @media(max-width:768px){.container{padding:0 20px}}
+
+    /* ── Navigation ── */
+    .nav{position:sticky;top:0;z-index:10;background:var(--canvas);box-shadow:rgba(0,0,0,.04) 0 0 0 1px;height:64px;display:flex;align-items:center}
+    .nav__inner{width:100%;max-width:var(--max);margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .nav__logo{display:flex;align-items:center;gap:10px;color:var(--text);font-weight:600;text-decoration:none}
+    .nav__logo img{height:38px}
+    .nav__links{display:flex;gap:32px;list-style:none}
+    .nav__links a{font-size:14px;font-weight:500;color:var(--text);text-decoration:none;transition:color .2s ease}
+    .nav__links a:hover{color:var(--green)}
+    .nav__links a[aria-current=page]{color:var(--green);border-bottom:2px solid var(--green);padding-bottom:2px}
+    .nav__hamburger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:4px}
+    .nav__hamburger span{width:22px;height:2px;background:var(--text);border-radius:2px}
+    .nav__mobile-menu{display:none}
+    @media(max-width:760px){
+      .nav__links{display:none}
+      .nav__hamburger{display:flex}
+      .nav__mobile-menu.is-open{display:flex;position:fixed;top:64px;left:0;right:0;flex-direction:column;background:var(--canvas);padding:16px 20px;border-top:1px solid #c8dcc8;box-shadow:0 4px 12px rgba(0,0,0,.08);z-index:99}
+      .nav__mobile-menu a{padding:12px 8px;border-bottom:1px solid #e5efe5;color:var(--text);text-decoration:none}
+    }
+
+    /* ── Section Shells ── */
+    .about-section{padding:88px 0}
+    .about-section--hero{padding-top:88px;padding-bottom:68px;background:var(--canvas)}
+    .about-section--panel{background:var(--panel)}
+    .about-section--white{background:#fff}
+
+    /* ── Typography ── */
+    .eyebrow{font-size:12px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+    .section-title{font-size:52px;line-height:1.08;letter-spacing:-1.6px;font-weight:500;margin-bottom:24px}
+    .section-title--sm{font-size:40px;letter-spacing:-1.1px}
+    .lead{font-size:18px;line-height:1.65;max-width:780px}
+    .text-link{font-weight:600;background-image:linear-gradient(#d4f0cc,#d4f0cc);background-repeat:no-repeat;background-size:100% .38em;background-position:0 88%;padding:0 3px}
+
+    /* ── Hero Story Grid ── */
+    .story-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.35fr);gap:54px;align-items:start}
+    .story-copy p{font-size:17px;margin-bottom:18px}
+
+    /* ── People Behind PiP — Monash logo on right ── */
+    .people-intro-split{
+      display:grid;
+      grid-template-columns:1fr 280px;
+      gap:52px;
+      align-items:center;
+      margin-bottom:40px;
+    }
+    .people-intro-logo img{
+      width:280px;
+      height:auto;
+      display:block;
+    }
+    .people-intro-text h2{
+      font-size:40px;
+      letter-spacing:-1.1px;
+      font-weight:500;
+      margin-bottom:24px;
+      line-height:1.1;
+    }
+    .people-intro-text p{font-size:17px;margin-bottom:18px;line-height:1.7}
+    .people-intro-text p:last-child{margin-bottom:0}
+
+    /* ── People Grid ── */
+    .people-grid{display:grid;grid-template-columns:1fr;gap:24px}
+    .person-card{background:#fff;box-shadow:var(--shadow);border-radius:10px;overflow:hidden;display:grid;grid-template-columns:260px 1fr;align-items:start;transition:transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),box-shadow 0.28s ease}
+    .person-card:nth-child(1){transform:rotate(-0.8deg);transform-origin:center bottom}
+    .person-card:nth-child(1):hover{transform:rotate(0deg)}
+    .person-card:nth-child(2){transform:rotate(0.6deg);transform-origin:center bottom}
+    .person-card:nth-child(2):hover{transform:rotate(0deg)}
+    .person-photo{width:100%;height:260px;object-fit:cover;background:var(--surface)}
+    .person-body{padding:30px}
+    .person-name{font-size:22px;font-weight:600;line-height:1.25;letter-spacing:-.45px;margin-bottom:6px}
+    .person-role{font-size:14px;font-weight:500;color:var(--muted);margin-bottom:14px}
+    .person-body p{font-size:16px}
+
+    /* ── Action Lab Card ── */
+    .action-card{margin-top:24px;background:#fff;box-shadow:var(--shadow);border-radius:10px;display:grid;grid-template-columns:260px 1fr;overflow:hidden;transform:rotate(-0.8deg);transform-origin:center bottom;transition:transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),box-shadow 0.28s ease}
+    .action-card:hover{transform:rotate(0deg)}
+    .action-card img{width:100%;height:100%;object-fit:contain;background:var(--surface);padding:34px}
+    .action-card__body{padding:30px}
+    .action-card__body h3{font-size:24px;margin-bottom:10px}
+    .action-card__body p{font-size:16px;margin-bottom:14px}
+    .action-card__body p:last-child{margin-bottom:0}
+
+    /* ── Text Card ── */
+    .text-card{max-width:900px}
+    .text-card p{font-size:17px;margin-bottom:18px}
+    .text-card p:last-child{margin-bottom:0}
+    .section-copy p{font-size:17px;margin-bottom:18px}
+
+    @media(max-width:850px){
+      .story-grid,.person-card,.action-card{grid-template-columns:1fr}
+      .section-title{font-size:38px}
+      .about-section{padding:64px 0}
+      .action-card img{height:180px}
+      .person-photo{height:280px;width:100%}
+      .people-intro-split{grid-template-columns:1fr;gap:32px}
+      .people-intro-logo{position:static}
+      .people-intro-logo img{width:200px}
+    }
+
+    /* ── Wave Dividers ── */
+    .wave-sep{display:block;line-height:0;margin:0;padding:0;overflow:hidden}
+    .wave-sep svg{display:block;width:100%;height:64px}
+    @media(max-width:768px){.wave-sep svg{height:40px}}
+
+    /* ── Footer — matches homepage ── */
+    .footer{background:#162016;padding:60px 0 0}
+    .footer__grid{display:grid;grid-template-columns:1.25fr .9fr minmax(360px,1.4fr);gap:48px;padding-bottom:48px;align-items:start}
+    .footer__logo{display:flex;align-items:center;text-decoration:none;margin-bottom:16px}
+    .footer__logo img{height:38px;width:auto;filter:none;opacity:1}
+    .footer__logo-name{font-size:14px;font-weight:600;color:rgba(255,255,255,.85);letter-spacing:-.18px;margin-left:10px;white-space:nowrap}
+    .footer__strapline{font-size:14px;color:rgba(255,255,255,.55);line-height:1.6;letter-spacing:-.16px;max-width:240px}
+    .footer__nav-heading{font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px}
+    .footer__nav-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+    .footer__nav-list a{font-size:14px;font-weight:500;color:rgba(255,255,255,.75);letter-spacing:-.18px;text-decoration:none;transition:color .2s ease}
+    .footer__nav-list a:hover{color:#fff;text-decoration:none}
+    .footer__pip-notice{background:#fffbf0;border:1.5px solid #e8c87a;border-radius:10px;padding:32px;display:flex;flex-direction:column;gap:20px;box-shadow:0 16px 38px rgba(0,0,0,.18)}
+    .footer__pip-notice-heading{font-size:21px;font-weight:700;line-height:1.32;color:#4a3100;letter-spacing:-.36px}
+    .footer__pip-notice-body{font-size:15px;color:#5c4200;line-height:1.6;letter-spacing:-.18px}
+    .btn{display:inline-flex;align-items:center;gap:8px;border-radius:32px;padding:14px 22px;font-family:var(--font);font-size:15px;font-weight:600;text-decoration:none;transition:background .2s ease,color .2s ease}
+    .btn-callout-cta{background:#c87a08;color:#fff;box-shadow:0 2px 8px rgba(200,122,8,.35)}
+    .btn-callout-cta:hover{background:#a86506;color:#fff;text-decoration:none}
+    .footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;align-items:center;justify-content:space-between}
+    .footer__copy{font-size:12px;color:rgba(255,255,255,.35);letter-spacing:-.14px}
+    @media(max-width:900px){.footer__grid{grid-template-columns:1fr 1fr;gap:36px}.footer__pip-notice{grid-column:span 2}}
+    @media(max-width:600px){.footer__grid{grid-template-columns:1fr}.footer__pip-notice{grid-column:span 1;padding:24px}}
+  </style>
+</head>
+<body>
+
+  <header class="nav" role="banner">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo" aria-label="Partners in Parenting - Home">
+        <img src="../images/PIP LOGO.png" alt="Partners in Parenting (PiP)" />
+        <span>Partners in Parenting</span>
+      </a>
+      <nav aria-label="Site navigation">
+        <ul class="nav__links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../resources/index.html">Resources</a></li>
+          <li><a href="index.html" aria-current="page">About Us</a></li>
+          <li><a href="../contact/index.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" id="nav-toggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav__mobile-menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
+      <a href="../index.html">Home</a>
+      <a href="../resources/index.html">Resources</a>
+      <a href="index.html" aria-current="page">About Us</a>
+      <a href="../contact/index.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero: The PiP Story -->
+    <section class="about-section about-section--hero" aria-labelledby="story-heading">
+      <div class="container">
+        <div class="story-grid">
+          <div>
+            <p class="eyebrow">About Us</p>
+            <h1 class="section-title" id="story-heading">The PiP Story</h1>
+            <p class="lead"><strong style="font-weight:500;">Partners in Parenting (PiP) aims to bridge the gap between complex research evidence and practical resources for parents.</strong></p>
+          </div>
+          <div class="story-copy">
+            <p>We know that parents play an important role in protecting their child's mental wellbeing. However, despite extensive research supporting the role parents can play in reducing their teen's risk of mental health problems, until recently this information was not easily accessible to parents.</p>
+            <p>PiP brings together decades of high-quality research evidence and the consensus of international experts on parenting and youth mental health. Parents can access this information via an interactive, online program, designed to build skills and confidence in ways that may protect their teen from depression and anxiety disorders.</p>
+            <p>To date, we've conducted three large research trials with over 1500 Australian parents. Our results show that PiP is effective, with benefits for both parents and teens.</p>
+            <p>If you'd like to read more about the research behind PiP, click <a class="text-link" href="https://partnersinparenting.com.au/static/PiP_research_summary-fee3e952d1c2ab23630e06229784fe95.pdf" target="_blank" rel="noopener noreferrer">here</a> for a summary of published papers, or get in touch with us at <a href="mailto:med-pip-plus@monash.edu">med-pip-plus@monash.edu</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave: canvas → panel -->
+    <div class="wave-sep" aria-hidden="true" style="background:#f4f8f4;">
+      <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,28 C360,8 1080,56 1440,36 L1440,64 L0,64 Z" fill="#edf4ed"/>
+      </svg>
+    </div>
+
+    <!-- People Behind PiP -->
+    <section class="about-section about-section--panel" aria-labelledby="people-heading">
+      <div class="container">
+
+        <!-- Intro text on left, Monash logo on right -->
+        <div class="people-intro-split">
+          <div class="people-intro-text">
+            <h2 id="people-heading">The People Behind PiP</h2>
+            <p>We are a team of researchers at Monash University, Melbourne, Australia. We are passionate about supporting parents and improving the mental wellbeing of young people.</p>
+            <p>Our latest program, PiP+, is made possible through a partnership between the Parenting and Youth Mental Health Group, Turner Institute for Brain and Mental Health, and Action Lab, Faculty of Information Technology. Together, we have redesigned PiP to improve parents' experience and support while completing PiP.</p>
+            <p>We've also partnered with Prevention United to deliver the program to families across Australia.</p>
+          </div>
+          <div class="people-intro-logo">
+            <img src="../images/monash_logo.png" alt="Monash University" />
+          </div>
+        </div>
+
+        <div class="people-grid">
+          <article class="person-card">
+            <img class="person-photo" src="../images/A:Prof%20Marie%20Yap%20.png" alt="A/Prof Marie Yap" />
+            <div class="person-body">
+              <h3 class="person-name">A/Prof Marie Yap</h3>
+              <p class="person-role">Lead Researcher &amp; Founder of Partners in Parenting</p>
+              <p>Marie is an Associate Professor, Psychologist and Head of the Parenting and Youth Mental Health Group at Monash University. Marie has been recognised as a leading international expert in parent-child relationships.</p>
+            </div>
+          </article>
+          <article class="person-card">
+            <img class="person-photo" src="../images/Dr%20Mairead%20Cardamone-Breen.png" alt="Dr Mairead Cardamone-Breen" />
+            <div class="person-body">
+              <h3 class="person-name">Dr Mairead Cardamone-Breen</h3>
+              <p class="person-role">Development and Evaluation</p>
+              <p>Mairead is a Psychologist and Research Fellow in the Parenting and Youth Mental Health Research Group at Monash University. Mairead has been instrumental in the development and evaluation of the Partners in Parenting program.</p>
+            </div>
+          </article>
+        </div>
+
+        <article class="action-card">
+          <img src="../images/ActionLab.png" alt="Action Lab" />
+          <div class="action-card__body">
+            <h3>Action Lab</h3>
+            <p>Action Lab is a multidisciplinary team of impact-focused researchers in the department of Human-Centred Computing at Monash University, Australia. They recently joined the PiP team to co-design and develop PiP+ (the new and updated version of PiP), with the latest technology and their domain expertise in computer science, human-centred design methods, interaction design and digital mental health.</p>
+            <p>The Action Lab project team is led by Professor Patrick Olivier and includes a highly energetic and creative team of researchers and research engineers: Dr Tom Bartindale, Peter Chen, Arie Hendrikse, Dr Roisin McNaney, Joshua Seguin, Dr Ling Wu, and Dr Jue (Grace) Xie.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Wave: panel → white -->
+    <div class="wave-sep" aria-hidden="true" style="background:#edf4ed;">
+      <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,36 C360,56 1080,8 1440,28 L1440,64 L0,64 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+
+    <!-- Other Investigators -->
+    <section class="about-section about-section--white" aria-labelledby="investigators-heading">
+      <div class="container">
+        <h2 class="section-title section-title--sm" id="investigators-heading">Other PiP+ Investigators</h2>
+        <div class="text-card">
+          <p>The PiP+ program and research project are part of a collaboration involving: Emeritus Professor Tony Jorm (University of Melbourne); Dr Stephen Carbone (Prevention United); Associate Professor Sarah Whittle (University of Melbourne); Dr Orli Schwartz (University of Melbourne); Professor Nicholas Allen (University of Oregon); Gail McHardy (Parents Victoria); Associate Professor Glenn Melvin (Deakin University); Professor Andrew Thompson (University of Melbourne, Orygen Youth Health, University of Warwick); Dr Catherine Wade (Parenting Research Centre); and Dr Steven Leicester (headspace).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave: white → panel -->
+    <div class="wave-sep" aria-hidden="true" style="background:#ffffff;">
+      <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,28 C360,8 1080,56 1440,40 L1440,64 L0,64 Z" fill="#edf4ed"/>
+      </svg>
+    </div>
+
+    <!-- Acknowledgements -->
+    <section class="about-section about-section--panel" aria-labelledby="ack-heading">
+      <div class="container">
+        <h2 class="section-title section-title--sm" id="ack-heading">Acknowledgements</h2>
+        <div class="text-card">
+          <p>The PiP+ program was delivered in collaboration with our industry partners Prevention United, who supported the implementation of PiP from 2020 to 2022.</p>
+          <p>The Partners in Parenting program is part of a suite of parenting resources from the Parenting Strategies Program, which was first established in 2010. Throughout its 10-year history, the program has had many contributors and funders, whom we cannot all acknowledge by name here. Nonetheless, special thanks go to the following contributors to the Partners in Parenting program: Professor Tony Jorm (University of Melbourne), Dr Katherine Lawrence (Monash University), Professor Ron Rapee (Macquarie University), Associate Professor Glenn Melvin (Deakin University), Jacqueline Green, Clare Nowell (Monash University), and all the staff, students, and volunteers of the Parenting and Youth Mental Health Group from 2014 to 2021.</p>
+          <p>We also thank the parents and young people who have contributed feedback throughout the different stages of the PiP journey.</p>
+          <p>We acknowledge with thanks the funding which have supported the development and evaluation of the program from 2011–2021, including: National Health and Medical Research Council (APP IDs 2005621, 566652, 1061744, 400001), Australian Rotary Health, Monash University, and Helen Macpherson Smith Trust.</p>
+          <p>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Wave: panel → dark footer -->
+  <div class="wave-sep" aria-hidden="true" style="background:#edf4ed;">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,28 C360,64 1080,64 1440,24 L1440,64 L0,64 Z" fill="#162016"/>
+    </svg>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="../index.html" class="footer__logo" aria-label="Partners in Parenting – Home">
+            <img src="../images/PIP LOGO.png" alt="Partners in Parenting (PiP)" />
+            <span class="footer__logo-name">Partners in Parenting</span>
+          </a>
+          <p class="footer__strapline">An award-winning, evidence-based online parenting program by Monash University, supporting parents across Australia.</p>
+        </div>
+        <div class="footer__nav">
+          <p class="footer__nav-heading">Navigation</p>
+          <ul class="footer__nav-list">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../resources/index.html">Resources</a></li>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="../contact/index.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer__pip-notice" role="note" aria-label="Existing PiP+ account notice">
+          <p class="footer__pip-notice-heading">Do you have an existing account for PiP+?</p>
+          <p class="footer__pip-notice-body">The previous version of PiP+ at partnersinparenting.com.au is no longer taking new registrations. If you already signed up, you can still access your account.</p>
+          <a href="https://pip-plus.web.app/" class="btn btn-callout-cta" target="_blank" rel="noopener noreferrer">
+            Access PiP+
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Monash University. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var navToggle = document.getElementById('nav-toggle');
+    var mobileMenu = document.getElementById('mobile-menu');
+    navToggle.addEventListener('click', function() {
+      var isOpen = mobileMenu.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      mobileMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    });
+  </script>
+</body>
+</html>

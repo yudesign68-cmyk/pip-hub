@@ -1,0 +1,333 @@
+# PiP Landing Page Redesign  @Today 2:00 PM
+
+Summary
+
+### Action Items
+
+- [ ]  Yusun to create design by Wednesday
+- [ ]  Dhruv to review design on Tuesday
+- [ ]  Alice to review (Tuesday - per notes)
+- [ ]  Yusun to confirm approach with Grace before proceeding
+- [ ]  Team to deliver final product by end of next week (Friday)
+- [ ]  Contact Marie if needed for content questions
+
+### Project Overview
+
+- The PIP+ program will continue running for existing users but will not accept new signups
+- The current Partners in Parenting website ([partnersparenting.com.au](http://partnersparenting.com.au)) will be converted into a hub/landing page that serves as an index to navigate users to different PIP program versions
+- The [pipplus.web.app](http://pipplus.web.app) domain will remain unchanged for existing users
+- This redesign will finally provide a central location listing all available PIP versions, addressing long-standing confusion about how many PIP programs exist
+
+### Content Changes
+
+- Remove all COVID-related content and imagery from the current website
+- The new hub will list the following PIP versions:
+    - PIP Teens (for parents of teenagers)
+    - PIP Kids (for parents of primary school age children)
+    - PIP KA (Kids with Autism)
+    - PIP+ (existing program)
+- Text content is provided in the shared document and should be followed strictly
+- Minor text changes can be requested via comments in the document, with email escalation if no response
+- Contact information has been updated to include new email
+
+### Pages to Retain
+
+- Keep Resources, About Us, and Contact Us pages
+- Remove the sign-in button from the hub page - users will sign in through individual PIP program links
+- Retain navigation tabs for subpages
+
+### Design Requirements
+
+- Create a completely new design that is modern but not outdated
+- Keep the design simple and able to be completed quickly (estimated 2 days)
+- Add subtle animations like sliding and dissolve effects, but avoid overly interactive elements
+- The landing page will be a new, static application
+- No need for complete new branding due to time constraints
+- Clients are not expected to be highly particular about design details and have previously approved similar designs
+- Use a simple template approach for subpages
+
+### Technical Implementation
+
+- The new hub will be a separate landing page with a new deployment
+- Domain name will be changed to the new UI
+- Design will be created using AI tools (possibly Lovable or similar) to expedite the process
+- HTML files will be provided for development (Figma not required)
+
+### Domain Name Context
+
+- Multiple domain names currently exist for essentially identical deployments: [partnersparenting.com.au](http://partnersparenting.com.au) and [pipplus.web.app](http://pipplus.web.app)
+- This is similar to other projects that maintain multiple domains for the same content
+- Only the main [partnersparenting.com.au](http://partnersparenting.com.au) website will be modified in this project
+
+### Timeline
+
+- Design work: 2-3 days estimated
+- Design delivery: Wednesday
+- Initial review: Tuesday
+- Final product delivery: End of next week (Friday)
+
+Notes
+
+Tuesday: Dhruv review / Alice review.
+
+Transcript
+
+So this one is based on the TIP+ program. They still want to keep it running for the existing users, they just don't want new users to sign up. So we want to change the partners and everything into a single landing page. I know they say it's a single landing page, but I don't think it depends on how you want to design it, but You need to have Resources... About us and contact us still. And then the home page will be just like a bridge to our journey.
+
+An indexer to other web deployments. Underpinning the guidelines. Which are somewhere here. Yes, everyone. They want you to keep the home page and contact us page.
+
+So they want to keep all the content in homepage but they still want to add some like another landing page that can navigate users to like different branches of pip yeah but they've no no so they want to get rid of whatever this is because this has COVID.
+
+This is a little bit of a compliment. Yes, this one is a bit of COVID, so they want to get rid of that one. They want to get it at that moment because this one is for big plus. It's all in the, I think it's all here. If not, I can help you sign a new letter.
+
+Why do we have two separate websites? Why do we have partnersparenting.com.au and also the pipplus.web.app but it looks exactly same?
+
+Yeah, they're just different domain names. Why? So... I know. That's just how people think. But they're the same. They're the same in deployment. It's like MPL. We have... We have made the link. And then you also have later on making the linkPut the R from the A. Right. And .com.au.
+
+dot com dot Yeah.
+
+It's like opioids as well. Opioids and then... safer opioid use It's identical, it's the same, just domain is different. Um...
+
+And still existing users are using the domain ppplus.web.app?
+
+Yeah, so they will use ppplus.
+
+So we are not gonna change anything on...
+
+No, we're only going to change the main website which is...
+
+thepartnersinparenting.com.au But still the pplus.web.com will remain same. So in partnersinparenting.com.au website, they need to put some... like additional navigation that users can like pip add pip add pip Whatever.
+
+I don't know what good versions are available.
+
+It's gonna be like the current... So there's a... The current home content? But they want to add another section, right?
+
+Yes, but I'm not quite sure what the design will look like. So they have the copy here, like the text. over here. But for the design, it's off the lastOh.
+
+Is it the same document? Are we on the same document? No, I don't think so. Yeah. I'm following you Why it looks a bit different? Yeah, it looks very different from mine.
+
+We don't have that editing.
+
+We cannot see. Or is it because we don't have editing access? Yeah, probably. Let me... But we should still see the updated content. Can you give me the access? Sus.
+
+What's yours do? Thank you.
+
+Yu-Sung-Jeon too? There was another Yu-Sung-Jeon in different department.
+
+That's why I'm number two.
+
+There's no zero. Probably that person had a PhD and a staff ID as well. She's a professor. That's why I'm number two.
+
+That's what I saw because I was using a different calling.
+
+And... This chain, number two.
+
+Is it? I'll search you some here.
+
+Yu-sun 2 is me. And that Yu-sun Jeon 1 is not in Australia anymore. She's working somewhere in the UK. I searched it. I searched her email and LinkedIn.
+
+I swear, I swear there was like, yeah, this one, right? I can't, I can't.
+
+Is it Yu-san.jun2? Yeah, London.
+
+And then there should be a profile picture.
+
+Yeah, yeah, yeah. But the annoying thing is some people thought actually that's my picture. Because she's also wearing glasses. Yeah, but it's totally different field. I think she's studying something Medical related? Medicine something? Not me.
+
+So it looks like this doesn't show us... Oh, did you get the invitation? Yeah, yeah.
+
+Oh yeah, now I can see the editing part.
+
+It doesn't tell you all the deployments. These are just fast changes.
+
+So they don't want to put these photos Right? They don't want it.
+
+Where can I access PIP?
+
+The following versions of PIP are currently available.
+
+Yeah, there's a list.
+
+Yeah, it's unfavorable. It changed a lot.
+
+But there are only two versions. What? So one is this one, the other is this one.
+
+And that's it. Wait, hold on, where is it? Page three. Yeah, here, here.
+
+Yeah, it's only big B and big.
+
+And it gets.
+
+The parents of teenagers.
+
+And And they'd get autism.
+
+But...
+
+Parents of primary school age So peep kids is for...
+
+Autism Kids.
+
+I don't know. Should I know? Or should I just...
+
+Yeah kids Where can I access...
+
+I mean, why do we have so many different ways to access PIP?
+
+Why do we have access PEEP via Headspace and PEEP education program?
+
+I can give, yeah. So...
+
+Are those...
+
+different So peep. kids and peep KA is different.
+
+I think so. KA is for kids with autism.
+
+But we don't have... P...K...A... link here right we only have pip Yeah, so if you search PKA.
+
+Oh, yeah, it's not in the document, but if you search PKA, it's on the part of the documents.
+
+Oh yeah, it looks different. So many peep.
+
+Evidence-based parenting guidelines. They want to remove this all.
+
+So what's paper plus?
+
+I think P plus is... Only for COVID. Is it correct? People are parenting during COVID, but now It's, yeah, COVID is done so they want to change this. tip Plus website to kind of like peep hope like yeah Amazing.
+
+So yeah. Maybe like two days, three days.
+
+I think Two days, for a Mayan, two days. And then I'll ask Drew if I need to. Because I always need to get confirmed from him. But... I'm wondering... How long it takes? for you to develop but it would look similar to all the piv Yes, well no They want to change the graphic styles as well right? Because that looks too outdated.
+
+So it will be just a landing page with whatever content they have here. But the design is complete. The design is completely new. Yeah...
+
+Bastille.
+
+I'm in. Is that the end? So I'm actually using the old code. Like a new landing page. But we're not gonna...
+
+So the landing page itself will be a new app You up?
+
+What does that mean?
+
+So it's not linked to the paper deployments?
+
+So we just remove this domain name.
+
+We just want to change the domain name to the UI.
+
+Can I just call it... People help them. It's so confusing. Yeah.
+
+Maybe ask Grace first.
+
+And then I will just strictly follow the content I... God? the text content I got from hereAnd... And it's gonna be very static. Yes.
+
+sideNiggas. because it can be hard to But for an already commented, just something simple that can be done very quickly.
+
+But you're not gonna come up with like total new branding for this one because we don't have time for that.
+
+Just keep it simple.
+
+Yeah. Oh. Do like Keeping things simple but make it more modern. Not. outdated too much. Yeah, probably we need to add some motions as well, but not like very interactive things, something like just sliding and dissolve, those kind of things. Yeah.
+
+I have a question. So I see in the document there is like leave the signing button. But if it's a hard... If it's a hub, like serving as an index page then why we have signing button in here So they still want to use it Um I mean...
+
+Because they want the existing users to still be able to access through this website.
+
+But if they're signing on parenting inDot com dot au. Where would it be redirected to?
+
+I think we can just remove it and then we can justSo, this is the key plus sign for the attack.
+
+When they click sign in?
+
+No, when they click on Tick Plus. So in here, You have a list or a collection of PIP, right? PIP-K, PIP-K, PIP+. Uh-huh. Yeah, every PIP.
+
+And when you click on PIP plus, it just goes to that. This website. That means in... In The previous website, the PIP hub website, we don't have sign in?
+
+No, I can just get it out.
+
+Then I think this is the Do we still need to keep other pages then?
+
+Dashboard and... resources about us.
+
+This is neutral and this is neutral. If Still Is this one?
+
+More resources?
+
+Yeah, I think... Contact us. How about they cross?
+
+How about they change the text? Yes, if you want to do this, I can do it.
+
+Where is the resources? Um... page Which page is this? Like somewhere in the middle. Evidence-based.
+
+Now on page four.
+
+Page four. Page four. More resources. But this is the button, isn't it?
+
+Oh, you mean the tab?
+
+Yeah. The... this one. Do we still want to have this? Paige?
+
+Which one is that though? Isn't that this? Oh, it's this one.
+
+Yeah, but what I mean is in the menu, the tab, do we still... wants to keep thatYes. I'll just make one template and just dump everything for the subpages. Two days job.
+
+I think the contact us has changed.
+
+Yeah, I think it's changed to, yeah, there's an info, my email. Yeah. Yeah, it's okay. Okay. I will spend a bit of time to understand the text but is there any chance I can change the text or it's just like Fixed, fixed.
+
+Can you leave a comment?
+
+Are they fast to respawn? Ready, go.
+
+If you don't hear a response, I can email you. What just happened?
+
+I will try not to change.
+
+Have you met Marie? No. Never. I'll probably send it out to the future. When...
+
+Until when I need to hand over? I don't know, next week. Someday next week, but we need to Give them Like publish the flight before Friday?
+
+No, no. So you finish Friday and then they can have whatever, however long they want to leave you.
+
+So They need design by next Friday.
+
+Today is promisedHuh? Today is promisedEnd of next week?
+
+Only design?
+
+No, no, the product.
+
+So which day do you want me to give you design? How long do you need?
+
+I think it takes some time to understand all this. Yeah.
+
+Another question. I'll I'll probably just use AI tools to make it, make it fast.
+
+I don't think they're too nitpicky with the design. They should actually like this design. They said the patterns love it.
+
+Cool. That's good. If I Give you like HTML file Can you use that or do you prefer to get a file like in Figma like MTL? Is it different? I don't know. I don't know why Jin is so...
+
+I think it's fine. Whatever you feel. I think it's fine. It's all the same?
+
+So I don't... I don't have to give you Figma file. Just H2O.
+
+Is something you feel likeFaster or...
+
+Still, I'm so confused. So there's no website currently available to list all the people.
+
+I was always like Yeah, just question about that because last time when I did The pip module revamped with Drup I asked Drup how many pips do we have and Drup was like he doesn't know as well There are so many different versions Four or five. So finally we're gonna make one hub that People can know how many pips we have.
+
+I think there's at least five. Wow, Indutta. Indutta.
+
+It's all look exactly same.
+
+Yeah, so it's so confused.
+
+Okay, good Wednesday? Is it okay?
+
+Or when do you plan to that drove to review it. Tuesday. So can I have a look on Tuesday but Just have a look. Sure. Yeah, before.
+
+Maybe just share. Are you using BigMama?
+
+Probably lovable. Fake money credit is so expensive. or maybe Cloud code so I can use skillsThere you go. MD files, yeah.
