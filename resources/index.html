@@ -6,10 +6,11 @@
   <title>Resources — Partners in Parenting (PiP)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    :root{--canvas:#f4f8f4;--panel:#edf4ed;--surface:#e5f0e5;--text:#162016;--muted:#4e6456;--green:#1a8030;--deep:#0d5020;--amber:#c87a08;--max:1200px;--font:'Plus Jakarta Sans',system-ui,sans-serif;--shadow:color(display-p3 0.784 0.863 0.784) 0 0 0 1px inset}
+    :root{--canvas:#f4f8f4;--panel:#edf4ed;--surface:#e5f0e5;--text:#162016;--muted:#4e6456;--green:#1a8030;--deep:#0d5020;--amber:#c87a08;--max:1200px;--font:'Outfit',system-ui,sans-serif;--shadow:color(display-p3 0.784 0.863 0.784) 0 0 0 1px inset}
     *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
     body{font-family:var(--font);background:var(--canvas);color:var(--text);font-size:15px;line-height:1.62;letter-spacing:-.2px;-webkit-font-smoothing:antialiased}
     a{color:var(--deep);text-decoration:none} a:hover{text-decoration:underline} img{display:block;max-width:100%}
     .container{max-width:var(--max);margin:0 auto;padding:0 32px}
@@ -42,7 +43,7 @@
     @media(max-width:768px){.page-title{font-size:38px;letter-spacing:-1.1px}}
 
     /* ── Resource Sections ── */
-    .resource-section{padding:64px 0}
+    .resource-section{padding:64px 0;scroll-margin-top:72px}
     .section-head{max-width:760px;margin-bottom:28px}
     .section-head h2{font-size:34px;line-height:1.16;letter-spacing:-.9px;margin-bottom:12px}
     .section-head p{font-size:16px;color:var(--muted)}
@@ -52,6 +53,7 @@
     .resource-card p{color:var(--text)}
     .resource-meta{font-size:13px;font-weight:600;color:var(--muted)}
     .resource-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:8px}
+    .service-item .resource-actions{margin-top:14px}
     @media(max-width:760px){.resource-grid{grid-template-columns:1fr}.resource-section{padding:48px 0}}
 
     /* ── Buttons ── */
@@ -60,16 +62,24 @@
     .btn-light{background:var(--surface);color:var(--text)}
     .btn-light:hover{background:#d6e8d6;color:var(--text)}
 
+    /* ── Hero Shortcut Navigation ── */
+    .shortcuts{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+    .shortcut-btn{display:inline-flex;align-items:center;gap:7px;border-radius:32px;padding:10px 16px;background:#fff;border:1.5px solid #c2d9c2;color:var(--deep);font-family:var(--font);font-size:14px;font-weight:500;text-decoration:none;cursor:pointer;transition:background .18s ease,border-color .18s ease,box-shadow .18s ease;white-space:nowrap}
+    .shortcut-btn:hover{background:#edf4ed;border-color:#1a8030;color:var(--deep);text-decoration:none;box-shadow:0 2px 8px rgba(26,128,48,.12)}
+    .shortcut-btn:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+    .shortcut-btn svg{flex:0 0 auto;opacity:.7}
+    @media(max-width:600px){.shortcuts{gap:8px}.shortcut-btn{font-size:13px;padding:9px 14px}}
+
     /* ── Other Resources Toggle ── */
     .other-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;background:#fff;border:0;box-shadow:var(--shadow);border-radius:10px;padding:24px 28px;font-family:var(--font);cursor:pointer;text-align:left;transition:background .18s ease}
     .other-toggle span:first-child{font-size:24px;font-weight:600;letter-spacing:-.55px;color:var(--text);line-height:1.3}
     .other-toggle span:nth-child(2){font-size:15px;color:var(--muted);line-height:1.45}
     .chevron{width:34px;height:34px;border-radius:50%;background:var(--surface);color:var(--text);display:grid;place-items:center;flex:0 0 auto;transition:transform .22s ease,color .18s ease}
     .other-toggle[aria-expanded=true] .chevron{transform:rotate(180deg);color:var(--green)}
-    .other-panel{margin-top:18px;background:#fff;padding:28px 32px 32px;border-radius:10px;box-shadow:var(--shadow)}
+    .other-panel{margin-top:18px}
     .other-panel[hidden]{display:none}
-    .other-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:34px}
-    .sub-resource h3{font-size:22px;line-height:1.28;letter-spacing:-.4px;margin-bottom:24px}
+    .other-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .sub-resource h3{font-size:22px;line-height:1.28;letter-spacing:-.4px;margin-bottom:4px}
     .service-list{display:grid;gap:22px}
     .service-item{border-top:1px solid #d6e8d6;padding-top:24px;line-height:1.72}
     .service-item:first-child{border-top:0;padding-top:0}
@@ -141,6 +151,20 @@
         <p class="eyebrow">Resources</p>
         <h1 class="page-title">Useful Resources for Parents &amp; Carers</h1>
         <p class="lead">If you or your child want more information about depression and anxiety, or would like to speak to someone over the phone, please check out the following organisations and helplines. You'll also find some other resources referred to in the PiP modules.</p>
+        <nav class="shortcuts" aria-label="Jump to section">
+          <a class="shortcut-btn" href="#section-parents">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            Mental Health Resources for Parents/Carers
+          </a>
+          <a class="shortcut-btn" href="#section-youth">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            Mental Health Resources for Young People
+          </a>
+          <a class="shortcut-btn" href="#section-other">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            Other Resources
+          </a>
+        </nav>
       </div>
     </section>
 
@@ -152,7 +176,7 @@
     </div>
 
     <!-- Section 1: Mental Health for Parents -->
-    <section class="resource-section" style="background:#edf4ed;" aria-labelledby="parents-heading">
+    <section id="section-parents" class="resource-section" style="background:#edf4ed;" aria-labelledby="parents-heading">
       <div class="container">
         <div class="section-head">
           <h2 id="parents-heading">Mental Health Resources for Parents/Carers</h2>
@@ -210,7 +234,7 @@
     </div>
 
     <!-- Section 2: Mental Health for Young People -->
-    <section class="resource-section" style="background:#f4f8f4;" aria-labelledby="youth-heading">
+    <section id="section-youth" class="resource-section" style="background:#f4f8f4;" aria-labelledby="youth-heading">
       <div class="container">
         <div class="section-head">
           <h2 id="youth-heading">Mental Health Resources for Young People</h2>
@@ -260,7 +284,7 @@
     </div>
 
     <!-- Section 3: Other Resources -->
-    <section class="resource-section" style="background:#edf4ed; padding-bottom: 80px;">
+    <section id="section-other" class="resource-section" style="background:#edf4ed; padding-bottom: 80px;">
       <div class="container">
         <button class="other-toggle" type="button" aria-expanded="false" aria-controls="other-resources-panel" id="other-resources-toggle">
           <span>Other Resources for Parents and Young People</span>
@@ -269,23 +293,44 @@
         </button>
         <div class="other-panel" id="other-resources-panel" hidden>
           <div class="other-grid">
-            <article class="sub-resource">
+            <article class="sub-resource resource-card">
               <h3>Resources for LGBTQIA+ Young People</h3>
               <div class="service-list">
                 <div class="service-item">
                   <h4>qheadspace</h4>
                   <p>A peer led online chat for LGBTQIA+ young people in Australia.</p>
+                  <div class="resource-actions">
+                    <a class="btn" href="https://my.headspace.org.au/online-communities/372936/" target="_blank" rel="noopener noreferrer">
+                      Visit qheadspace
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                  </div>
                 </div>
                 <div class="service-item">
                   <h4>QLife</h4>
                   <p>Australia-wide, anonymous, peer support and referral for people wanting to talk about issues relating to sexuality, identity, gender, bodies, feelings, or relationships. Phone and web-chat available.</p>
+                  <div class="resource-actions">
+                    <a class="btn" href="https://www.qlife.org.au/" target="_blank" rel="noopener noreferrer">
+                      Visit QLife
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                  </div>
                 </div>
               </div>
             </article>
-            <article class="sub-resource">
+            <article class="sub-resource resource-card">
               <h3>Resources for Financial, Accommodation, and Legal Advice</h3>
               <p>The services listed below can provide referral information for families struggling with accommodation, finances, family violence, and other specialist services in each state.</p>
-              <div class="service-item"><h4>Youth Law Australia</h4><p>Free, confidential legal information and advice for young people under 25, Australia wide.</p></div>
+              <div class="service-item">
+                <h4>Youth Law Australia</h4>
+                <p>Free, confidential legal information and advice for young people under 25, Australia wide.</p>
+                <div class="resource-actions">
+                  <a class="btn" href="https://yla.org.au/" target="_blank" rel="noopener noreferrer">
+                    Visit Youth Law Australia
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  </a>
+                </div>
+              </div>
               <h4 style="margin-top:18px;">Services by state</h4>
               <ul class="state-list">
                 <li>VIC — Victoria Legal Aid. Ph: 1300 792 387</li>
@@ -331,12 +376,17 @@
             <li><a href="../contact/index.html">Contact Us</a></li>
           </ul>
         </div>
-        <div class="footer__pip-notice" role="note" aria-label="Existing PiP+ account notice">
-          <p class="footer__pip-notice-heading">Do you have an existing account for PiP+?</p>
-          <p class="footer__pip-notice-body">The previous version of PiP+ at partnersinparenting.com.au is no longer taking new registrations. If you already signed up, you can still access your account.</p>
+        <!-- Col 3: PiP+ account notice -->
+        <div class="footer__pip-notice" role="note" aria-label="Existing PiP+ account notice" style="border-width: 6px">
+          <p class="footer__pip-notice-heading" style="font-size: 26px">Do you have an existing account for PiP+?</p>
+          <p class="footer__pip-notice-body">
+            The previous version of PiP+ at partnersinparenting.com.au is no longer taking new registrations. If you already signed up, you can still access your account.
+          </p>
           <a href="https://pip-plus.web.app/" class="btn btn-callout-cta" target="_blank" rel="noopener noreferrer">
             Access PiP+
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
           </a>
         </div>
       </div>
@@ -361,6 +411,16 @@
       otherToggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
       otherPanel.hidden = isOpen;
     });
+    // When the "Other Resources" shortcut is clicked, open the panel before scrolling
+    var shortcutOther = document.querySelector('a[href="#section-other"]');
+    if (shortcutOther) {
+      shortcutOther.addEventListener('click', function() {
+        if (otherToggle.getAttribute('aria-expanded') !== 'true') {
+          otherToggle.setAttribute('aria-expanded', 'true');
+          otherPanel.hidden = false;
+        }
+      });
+    }
   </script>
 </body>
 </html>

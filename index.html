@@ -6,7 +6,7 @@
   <title>Partners in Parenting (PiP) — Monash University</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     /* ─────────────────────────────────────────
@@ -31,7 +31,7 @@
       --color-lime-wash:     #d4f0cc;
 
       /* Typography */
-      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-sans: 'Outfit', system-ui, sans-serif;
 
       /* Type scale */
       --text-caption:     12px;
@@ -80,17 +80,17 @@
       --spacing-104: 104px;
 
       /* Radius */
-      --radius-tags:       6px;
-      --radius-cards:      10px;
-      --radius-inputs:     10px;
+      --radius-tags:       4px;
+      --radius-cards:      6px;
+      --radius-inputs:     6px;
       --radius-buttons:    32px;
-      --radius-cards-lg:   24px;
+      --radius-cards-lg:   10px;
 
-      /* Shadows */
-      --shadow-card:  color(display-p3 0.784 0.863 0.784) 0px 0px 0px 1px inset;
-      --shadow-nav:   rgba(0, 0, 0, 0.04) 0px 0px 0px 1px;
-      --shadow-lg:    rgba(0, 0, 0, 0.15) 0px 0px 24px 0px;
-      --shadow-sm:    rgba(0, 0, 0, 0.04) 0px 1px 6px 0px, rgba(0, 0, 0, 0.05) 0px 0px 24px 0px;
+      /* Shadows — all removed */
+      --shadow-card:  none;
+      --shadow-nav:   none;
+      --shadow-lg:    none;
+      --shadow-sm:    none;
 
       /* Layout */
       --page-max: 1200px;
@@ -148,7 +148,7 @@
       cursor: pointer;
       border: none;
       text-decoration: none;
-      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
       white-space: nowrap;
     }
 
@@ -192,7 +192,7 @@
 
     .btn-outline {
       background-color: transparent;
-      color: var(--color-forest-primary);
+      color: var(--color-timber);
       border: 1.5px solid var(--color-forest-primary);
     }
     .btn-outline:hover {
@@ -204,7 +204,6 @@
       background-color: var(--color-amber);
       color: #ffffff;
       font-weight: 600;
-      box-shadow: 0 2px 8px rgba(200, 122, 8, 0.35);
     }
     .btn-callout-cta:hover {
       background-color: #a86506;
@@ -251,6 +250,7 @@
       box-shadow: var(--shadow-card);
       border-radius: var(--radius-cards);
       padding: var(--spacing-32);
+      border: none;
     }
 
     /* Placeholder image */
@@ -344,13 +344,13 @@
     }
 
     .nav__links a:hover {
-      color: var(--color-forest-primary);
+      color: var(--color-timber);
       text-decoration: none;
     }
 
     /* Active nav link (current page) */
     .nav__links a[aria-current="page"] {
-      color: var(--color-forest-primary);
+      color: var(--color-timber);
       border-bottom: 2px solid var(--color-forest-primary);
       padding-bottom: 0;
     }
@@ -380,7 +380,7 @@
       gap: var(--spacing-4);
       background-color: var(--color-sage-canvas);
       padding: var(--spacing-16) var(--spacing-20);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-bottom: 1px solid #c8dcc8;
       position: fixed;
       top: 64px;
       left: 0; right: 0;
@@ -416,9 +416,9 @@
        [1] CALLOUT BOX — prominent, readable
     ───────────────────────────────────────── */
     .callout-bar {
-      background-color: #fffbf0;
-      border-top: 3px solid var(--color-amber);
-      border-bottom: 1px solid #e8c87a;
+      background-color: #1a1a1a;
+      border-top: none;
+      border-bottom: none;
       animation: pipNoticeIn 0.82s cubic-bezier(0.19, 1, 0.22, 1) both 0.72s;
     }
 
@@ -430,6 +430,7 @@
       align-items: center;
       gap: var(--spacing-24);
       flex-wrap: wrap;
+      justify-content: space-between;
     }
 
     .callout-bar__icon-wrap {
@@ -438,10 +439,9 @@
       height: 48px;
       background-color: var(--color-amber);
       border-radius: 50%;
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 8px rgba(200, 122, 8, 0.3);
     }
 
     .callout-bar__icon-wrap svg {
@@ -458,14 +458,14 @@
     .callout-bar__heading {
       font-size: 17px;
       font-weight: 700;
-      color: #3d2800;
+      color: white;
       letter-spacing: -0.24px;
       margin-bottom: 6px;
     }
 
     .callout-bar__body {
       font-size: 14px;
-      color: #5c4200;
+      color: #e0e0e0;
       line-height: 1.6;
       letter-spacing: -0.16px;
     }
@@ -509,13 +509,13 @@
       font-weight: 600;
       line-height: var(--leading-display);
       letter-spacing: var(--tracking-display);
-      color: var(--color-timber);
+      color: var(--color-deep-forest);
       margin-bottom: var(--spacing-24);
       animation: pipFadeUp 0.84s cubic-bezier(0.19, 1, 0.22, 1) both 0.16s;
     }
 
     .hero__title .accent {
-      color: var(--color-forest-primary);
+      color: var(--color-deep-forest);
     }
 
     .hero__body {
@@ -563,8 +563,7 @@
       bottom: 20px;
       left: 20px;
       background: #ffffff;
-      box-shadow: var(--shadow-card);
-      border-radius: 10px;
+      border-radius: 6px;
       padding: 10px 16px;
       display: flex;
       align-items: center;
@@ -642,18 +641,21 @@
     .involved__list {
       display: flex;
       flex-direction: column;
-      gap: var(--spacing-16);
+      gap: 0;
       list-style: none;
     }
 
     .involved__list-item {
       display: flex;
       gap: var(--spacing-16);
-      background: #ffffff;
-      box-shadow: var(--shadow-card);
-      border-radius: var(--radius-cards);
-      padding: var(--spacing-20) var(--spacing-24);
+      background: none;
+      padding: var(--spacing-20) 0;
       align-items: flex-start;
+      border-bottom: 1px solid #c8dcc8;
+    }
+
+    .involved__list-item:last-child {
+      border-bottom: none;
     }
 
     .involved__list-number {
@@ -669,11 +671,12 @@
       font-size: 13px;
       font-weight: 600;
       letter-spacing: -0.17px;
+      margin-top: 2px;
     }
 
     .involved__list-text {
       font-size: var(--text-body);
-      line-height: 1.55;
+      line-height: 1.6;
       color: var(--color-timber);
       letter-spacing: var(--tracking-body);
       padding-top: 4px;
@@ -691,93 +694,129 @@
     }
 
     /* ─────────────────────────────────────────
-       WHERE CAN I ACCESS PiP? (Tabbed)
-       Prominent tab buttons with clear active/inactive states
+       WHERE CAN I ACCESS PiP? — REDESIGN
+       Light bg, centred header, underline tabs, white card accordion
     ───────────────────────────────────────── */
     .access {
       padding: var(--spacing-96) 0;
-      background-color: #29512A;
+      background: #f7f0da;
+      border-radius: 800px 800px 0 0;
     }
 
     .access__header {
-      max-width: 640px;
-      margin-bottom: var(--spacing-48);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto var(--spacing-60);
     }
 
-    /* Tab navigation wrapper — editorial, open, no nested box */
+    .access .section-label {
+      display: none;
+    }
+
+    .access .section-heading {
+      font-size: 54px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1.4px;
+      color: var(--color-deep-forest);
+      text-align: center;
+      margin-bottom: var(--spacing-20);
+    }
+
+    .access .section-body {
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto;
+      color: var(--color-timber-muted);
+    }
+
+    /* Tab navigation wrapper */
     .access__tab-wrap {
-      margin-bottom: var(--spacing-48);
-      padding: 0;
+      text-align: center;
+      margin-bottom: 0;
+      padding-bottom: 0;
       background: none;
       border: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      padding-bottom: var(--spacing-36);
     }
 
     .access__tab-label {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.88);
-      letter-spacing: -0.18px;
+      font-style: italic;
+      color: var(--color-timber);
+      letter-spacing: -0.2px;
+      margin-bottom: var(--spacing-20);
       text-transform: none;
-      margin-bottom: var(--spacing-16);
     }
 
-    .access__options-note {
-      font-size: 15px;
-      line-height: 1.55;
-      color: rgba(255, 255, 255, 0.84);
-      letter-spacing: -0.18px;
-      margin: 0 0 var(--spacing-16);
-    }
-
-    /* Tab group — editorial inline strip */
+    /* Tab group — underline style */
     .access__tabs {
-      display: flex;
+      display: inline-flex;
+      justify-content: center;
+      gap: 4px;
       background-color: transparent;
       border-radius: 0;
       padding: 0;
-      gap: 8px;
-      max-width: 100%;
+      border-bottom: 5px solid #d4e4d4;
     }
 
     .access__tab {
       flex: 0 0 auto;
-      padding: 12px 28px;
-      border-radius: 40px;
+      padding: 10px 36px 16px;
+      border-radius: 8px 8px 0 0;
       font-family: var(--font-sans);
       font-weight: 500;
-      letter-spacing: -0.22px;
       cursor: pointer;
-      border: 1.5px solid rgba(255, 255, 255, 0.22);
+      border: none;
       background: transparent;
-      color: rgba(255, 255, 255, 0.75);
-      transition: background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-      line-height: 1.4;
+      color: var(--color-fog);
+      transition: color 0.2s ease, background-color 0.2s ease;
+      line-height: 1.3;
       text-align: center;
+      position: relative;
+      margin-bottom: -5px;
+    }
+
+    /* Rounded indicator line via pseudo-element */
+    .access__tab::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 5px;
+      background-color: transparent;
+      border-radius: 5px 5px 0 0;
+      transition: width 0.22s ease, background-color 0.22s ease;
     }
 
     .access__tab-title {
-      display: block;
-      font-size: 17px;
-      font-weight: 650;
-      line-height: 1.25;
+      display: inline;
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.25px;
     }
 
     .access__tab-age {
-      display: block;
-      margin-top: 4px;
-      font-size: 13px;
-      font-weight: 500;
-      line-height: 1.35;
-      color: currentColor;
-      opacity: 0.78;
+      display: inline;
+      margin-left: 4px;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: -0.2px;
+      color: inherit;
+      opacity: 1;
     }
 
     .access__tab:hover {
-      background-color: rgba(255, 255, 255, 0.10);
-      color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.32);
+      color: var(--color-timber-muted);
+      background-color: transparent;
+    }
+
+    .access__tab:hover::after {
+      width: 100%;
+      background-color: rgba(26, 128, 48, 0.3);
     }
 
     .access__tab:focus-visible {
@@ -786,27 +825,63 @@
     }
 
     .access__tab.is-active {
-      background: #ffffff;
-      color: #29512A;
-      font-weight: 600;
-      border-color: transparent;
-      box-shadow: 0 3px 14px rgba(0, 0, 0, 0.22), 0 1px 4px rgba(0, 0, 0, 0.18);
+      color: var(--color-timber);
+      background-color: transparent;
+    }
+
+    .access__tab.is-active::after {
+      width: 100%;
+      background-color: var(--color-forest-primary);
+    }
+
+    .access__tab.is-active .access__tab-title {
+      color: #1A8030;
+    }
+
+    .access__tab.is-active .access__tab-age {
+      color: var(--color-timber-muted);
     }
 
     @media (max-width: 640px) {
-      .access__tab-wrap { padding: 0; padding-bottom: var(--spacing-28); }
+      .access__tab-wrap { text-align: center; }
       .access__tabs {
         display: flex;
         flex-direction: column;
         width: 100%;
+        gap: 2px;
+        border-bottom: none;
+        border-left: 3px solid #d4e4d4;
       }
       .access__tab {
-        text-align: center;
-        padding: 11px 20px;
-        font-size: 14px;
+        border-radius: 0 8px 8px 0;
+        margin-bottom: 0;
+        margin-left: -3px;
+        text-align: left;
+        padding: 12px 20px;
       }
+      .access__tab::after {
+        /* Replace bottom line with left line on mobile */
+        top: 50%;
+        left: 0;
+        bottom: auto;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 0;
+        border-radius: 0 3px 3px 0;
+      }
+      .access__tab:hover::after {
+        width: 3px;
+        height: 70%;
+      }
+      .access__tab.is-active::after {
+        width: 3px;
+        height: 100%;
+      }
+      .access__tab-title { font-size: 17px; }
+      .access__tab-age { font-size: 14px; }
     }
 
+    /* Panel */
     .access__panel {
       display: none;
     }
@@ -815,116 +890,175 @@
       display: block;
     }
 
-    .access__panel-intro {
-      font-size: var(--text-body-lg);
-      color: var(--color-timber-muted);
-      margin-bottom: var(--spacing-32);
-      letter-spacing: var(--tracking-body-lg);
-      line-height: 1.6;
+    /* White card wrapping the program list */
+    .access__card {
+      background: #ffffff;
+      border-radius: var(--radius-cards);
+      padding: var(--spacing-36) var(--spacing-48);
     }
 
-    .access__programs {
+    .access__options-note {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--color-timber);
+      letter-spacing: -0.2px;
+      margin: 0 0 var(--spacing-32);
+    }
+
+    /* ─────────────────────────────────────────
+       ACCORDION — clean list rows
+    ───────────────────────────────────────── */
+    .accordion {
       display: flex;
       flex-direction: column;
-      gap: var(--spacing-20);
+      border-radius: 0;
+      overflow: visible;
+      box-shadow: none;
+      background: transparent;
     }
 
-    .program-card {
-      background: #ffffff;
-      box-shadow: var(--shadow-card);
+    .accordion-item {
+      background: transparent;
+      border-bottom: 1px solid #d8e8d8;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+      margin: 0 -12px;
+      padding: 0 12px;
+    }
+
+    .accordion-item:last-child {
+      border-bottom: none;
+    }
+
+    /* Subtle background when accordion item is open */
+    .accordion-item:has(.accordion-trigger[aria-expanded="true"]) {
+      background-color: rgba(26, 128, 48, 0.04);
+    }
+
+    .accordion-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-16);
+      justify-content: space-between;
+      padding: var(--spacing-24) 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      text-align: left;
+      transition: opacity 0.18s ease;
+      min-height: auto;
+    }
+
+    .accordion-trigger:hover {
+      background-color: transparent;
+    }
+
+    .accordion-item:hover {
+      background-color: rgba(26, 128, 48, 0.05);
       border-radius: var(--radius-cards);
-      padding: var(--spacing-28) var(--spacing-32);
+      transition: background-color 0.2s ease;
+    }
+
+    .accordion-trigger[aria-expanded="true"] {
+      background-color: transparent;
+      border-bottom: none;
+    }
+
+    .accordion-trigger__main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .accordion-trigger__title {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--color-deep-forest);
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .accordion-trigger__sub {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--color-ash);
+      letter-spacing: -0.15px;
+      font-weight: 400;
+    }
+
+    .accordion-trigger__meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    /* "Learn more ↓" replaces the old tag + chevron */
+    .accordion-learn-more {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-forest-primary);
+      letter-spacing: -0.18px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.18s ease;
+      pointer-events: none;
+      background-color: var(--color-lime-wash);
+      padding: 6px 12px;
+      border-radius: var(--radius-cards);
+    }
+
+    .accordion-learn-more svg {
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    .accordion-trigger[aria-expanded="true"] .accordion-learn-more svg {
+      transform: rotate(180deg);
+    }
+
+    .accordion-trigger:hover .accordion-learn-more {
+      color: var(--color-deep-forest);
+      background-color: #c4e8b4;
+    }
+
+    .accordion-content {
+      padding: 0 0 var(--spacing-28);
       display: flex;
       flex-direction: column;
       gap: var(--spacing-16);
+      animation: pipAccordionOpen 0.3s cubic-bezier(0.19, 1, 0.22, 1) both;
     }
 
-    .program-card__header {
-      display: flex;
-      align-items: flex-start;
-      gap: var(--spacing-12);
-      justify-content: space-between;
-      flex-wrap: wrap;
+    .accordion-content[hidden] {
+      display: none;
     }
 
-    .program-card__title {
-      font-size: var(--text-heading-sm);
-      font-weight: 600;
-      letter-spacing: var(--tracking-heading-sm);
-      line-height: var(--leading-heading-sm);
-      color: var(--color-timber);
-    }
-
-    .program-card__tag {
-      flex-shrink: 0;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      padding: 5px 12px;
-      border-radius: var(--radius-tags);
-      white-space: nowrap;
-    }
-
-    .tag-available {
-      background-color: var(--color-lime-wash);
-      color: var(--color-deep-forest);
-    }
-
-    .tag-trial {
-      background-color: var(--color-amber-wash);
-      color: var(--color-amber-text);
-    }
-
-    .tag-coming {
-      background-color: #f0f0f0;
-      color: var(--color-ash);
-    }
-
-    .program-card__body {
+    .accordion-desc {
       font-size: 16px;
       line-height: 1.7;
       color: var(--color-timber);
       letter-spacing: -0.2px;
     }
 
-    .program-card__pathway {
-      background-color: transparent;
-      border-radius: 8px;
-      padding: 0;
-      font-size: 16px;
-      line-height: 1.65;
+    .accordion-desc a {
       color: var(--color-timber);
-      letter-spacing: -0.2px;
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-12);
-      border-left: 0;
+      font-weight: 500;
     }
 
-    .program-card__pathway + .program-card__pathway {
-      margin-top: 0;
-    }
-
-    .program-card__pathway-label {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--color-forest-primary);
-      text-transform: uppercase;
-      letter-spacing: 0.65px;
-    }
-
-    .program-card__pathway-text {
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--color-timber);
-      letter-spacing: -0.2px;
-    }
-
-    /* Visit website CTA */
+    /* Program CTA */
     .program-card__cta {
       margin-top: var(--spacing-4);
     }
+
+    /* Hide old badge tags inside triggers */
+    .program-card__tag { display: none; }
 
     /* Email CTA block */
     .email-cta {
@@ -932,9 +1066,8 @@
       align-items: center;
       gap: var(--spacing-12);
       background-color: var(--color-sage-panel);
-      border-radius: 8px;
+      border-radius: var(--radius-cards);
       padding: 16px var(--spacing-20);
-      border-left: 3px solid var(--color-forest-primary);
       flex-wrap: wrap;
     }
 
@@ -980,131 +1113,58 @@
 
     .email-cta__address:hover { text-decoration: underline; }
 
-    @media (max-width: 600px) {
-      .program-card { padding: var(--spacing-20); }
+    /* Pathway split (two-column layout inside expanded accordion) */
+    .pathway-split {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      align-items: start;
     }
 
-    /* ─────────────────────────────────────────
-       ACCORDION PROGRAM CARDS
-    ───────────────────────────────────────── */
-    .accordion {
+    .pathway-divider {
+      background: #cfe4cf;
+      align-self: stretch;
+      margin: 0 36px;
+    }
+
+    .pathway-col {
       display: flex;
       flex-direction: column;
-      border-radius: var(--radius-cards);
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.06);
+      gap: 14px;
     }
 
-    .accordion-item {
-      background: #ffffff;
-      border-bottom: 1px solid #d4e8d0;
+    .program-card__pathway-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      color: var(--color-amber-text);
     }
 
-    .accordion-item:last-child {
-      border-bottom: none;
-    }
-
-    .accordion-trigger {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-16);
-      justify-content: space-between;
-      padding: var(--spacing-24) var(--spacing-28);
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: var(--font-sans);
-      text-align: left;
-      transition: background-color 0.18s ease, color 0.18s ease;
-      min-height: 84px;
-    }
-
-    .accordion-trigger:hover {
-      background-color: #f0f7f1;
-    }
-
-    .accordion-trigger[aria-expanded="true"] {
-      background-color: #e8f5ec;
-      border-bottom: 1px solid #c8e8d0;
-    }
-
-    .accordion-trigger__main {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .accordion-trigger__title {
-      font-size: 21px;
-      font-weight: 600;
-      letter-spacing: -0.32px;
+    .program-card__pathway-text {
+      font-size: 15.5px;
+      line-height: 1.72;
       color: var(--color-timber);
-      line-height: 1.3;
-      margin-bottom: 5px;
-    }
-
-    .accordion-trigger__sub {
-      font-size: 15px;
-      color: var(--color-timber-muted);
       letter-spacing: -0.18px;
-      line-height: 1.45;
     }
 
-    .accordion-trigger__meta {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-12);
-      flex-shrink: 0;
-    }
-
-    .accordion-chevron {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-smoke);
-      transition: transform 0.22s ease, color 0.18s ease;
-      flex-shrink: 0;
-    }
-
-    .accordion-trigger[aria-expanded="true"] .accordion-chevron {
-      transform: rotate(180deg);
-      color: var(--color-forest-primary);
-    }
-
-    .accordion-content {
-      padding: var(--spacing-24) var(--spacing-28) var(--spacing-28);
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-16);
-      animation: pipAccordionOpen 0.32s cubic-bezier(0.19, 1, 0.22, 1) both;
-    }
-
-    .accordion-content[hidden] {
-      display: none;
-    }
-
-    .accordion-desc {
-      font-size: 16px;
-      line-height: 1.7;
+    .program-card__pathway-text a {
       color: var(--color-timber);
-      letter-spacing: -0.2px;
+      font-weight: 500;
     }
 
-    @media (max-width: 640px) {
-      .accordion-trigger {
-        padding: var(--spacing-16) var(--spacing-20);
-        flex-wrap: wrap;
-        gap: var(--spacing-8);
-        min-height: unset;
+    @media (max-width: 768px) {
+      .access__card { padding: var(--spacing-24) var(--spacing-20); }
+      .accordion-trigger { padding: var(--spacing-20) 0; }
+      .accordion-trigger__title { font-size: 20px; }
+      .pathway-split {
+        grid-template-columns: 1fr;
       }
-      .accordion-trigger__meta {
-        order: -1;
+      .pathway-divider {
+        height: 1px;
         width: 100%;
-        justify-content: space-between;
-        flex-direction: row-reverse;
-      }
-      .accordion-content {
-        padding: var(--spacing-16) var(--spacing-20) var(--spacing-20);
+        background: #cfe4cf;
+        margin: 20px 0;
+        align-self: auto;
       }
     }
 
@@ -1137,7 +1197,7 @@
       width: 52px;
       height: 52px;
       background-color: var(--color-sage-surface);
-      border-radius: 14px;
+      border-radius: var(--radius-cards);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1153,14 +1213,15 @@
       font-weight: 600;
       letter-spacing: -1.6px;
       line-height: 1;
-      color: var(--color-forest-primary);
+      color: #1A8030;
       font-variant-numeric: tabular-nums;
     }
 
     .evidence__card-heading {
-      font-size: var(--text-heading-sm);
-      font-weight: 600;
-      letter-spacing: var(--tracking-heading-sm);
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.25;
       color: var(--color-timber);
       margin-bottom: var(--spacing-8);
     }
@@ -1249,7 +1310,6 @@
       border-radius: var(--radius-cards-lg);
       overflow: hidden;
       background: #000000;
-      box-shadow: var(--shadow-card);
     }
 
     .wellness__video iframe {
@@ -1257,6 +1317,7 @@
       height: 100%;
       border: 0;
       display: block;
+      border-radius: var(--radius-cards-lg);
     }
 
     @media (max-width: 768px) {
@@ -1290,7 +1351,7 @@
     .feature-tile {
       background: #ffffff;
       box-shadow: var(--shadow-card);
-      border-radius: var(--radius-cards);
+      border-radius: var(--radius-cards-lg);
       padding: var(--spacing-32);
       display: flex;
       flex-direction: column;
@@ -1299,12 +1360,11 @@
     }
 
     .feature-tile:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-sm), var(--shadow-card);
+      transform: translateY(-2px);
     }
 
     .feature-tile--green:hover {
-      box-shadow: var(--shadow-sm);
+      box-shadow: none;
     }
 
     /* Wide tile spans 2 cols but uses same flex layout as all others */
@@ -1321,7 +1381,7 @@
     .feature-tile__icon {
       width: 48px;
       height: 48px;
-      border-radius: 12px;
+      border-radius: var(--radius-cards);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1342,15 +1402,15 @@
       font-size: 40px;
       font-weight: 600;
       letter-spacing: -1.2px;
-      color: var(--color-forest-primary);
+      color: var(--color-timber);
       line-height: 1;
     }
 
     .feature-tile__heading {
-      font-size: var(--text-heading-sm);
-      font-weight: 600;
-      letter-spacing: var(--tracking-heading-sm);
-      line-height: var(--leading-heading-sm);
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.25;
       color: var(--color-timber);
     }
 
@@ -1374,11 +1434,12 @@
 
     .feature-tile__list li {
       display: flex;
-      gap: var(--spacing-8);
+      gap: 10px;
       font-size: var(--text-body);
-      line-height: 1.55;
+      line-height: 1.6;
       color: var(--color-timber);
       letter-spacing: var(--tracking-body);
+      align-items: flex-start;
     }
 
     .feature-tile__list li::before {
@@ -1389,22 +1450,37 @@
       height: 6px;
       background-color: var(--color-forest-primary);
       border-radius: 50%;
-      margin-top: 6px;
+      margin-top: 7px;
     }
 
-    @media (max-width: 900px) {
-      .features__grid { grid-template-columns: 1fr 1fr; }
-      .feature-tile--wide { grid-column: span 2; }
-    }
-
-    @media (max-width: 900px) {
-      [style*="grid-column: span 3"] { grid-column: span 2 !important; }
-    }
-
-    @media (max-width: 640px) {
-      .features__grid { grid-template-columns: 1fr; }
-      .feature-tile--wide { grid-column: span 1; }
-      [style*="grid-column: span 3"] { grid-column: span 1 !important; }
+    @media (max-width: 915px) {
+      /* Single-column layout: every tile, regardless of span class or inline style */
+      .features__grid {
+        grid-template-columns: 1fr !important;
+      }
+      .features__grid > * {
+        grid-column: 1 !important;
+      }
+      /* Lifestyle tile: stack text above image, prevent fixed 320px width overflowing */
+      .feature-tile--lifestyle > .feature-tile__inner {
+        flex-direction: column;
+      }
+      .feature-tile__lifestyle-preview {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        max-width: 100%;
+      }
+      /* Reset decorative tilts — rotated cards look awkward stacked in one column */
+      .feature-tile--tilt-left,
+      .feature-tile--tilt-right,
+      .motion-reveal.is-visible.feature-tile--tilt-left,
+      .motion-reveal.is-visible.feature-tile--tilt-right,
+      .feature-tile--tilt-left:hover,
+      .feature-tile--tilt-right:hover,
+      .motion-reveal.is-visible.feature-tile--tilt-left:hover,
+      .motion-reveal.is-visible.feature-tile--tilt-right:hover {
+        transform: none !important;
+      }
     }
 
     /* ─────────────────────────────────────────
@@ -1564,12 +1640,11 @@
     .footer__pip-notice {
       background-color: #fffbf0;
       border: 1.5px solid #e8c87a;
-      border-radius: 10px;
+      border-radius: var(--radius-cards);
       padding: var(--spacing-32);
       display: flex;
       flex-direction: column;
       gap: var(--spacing-20);
-      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.18);
     }
 
     .footer__pip-notice-heading {
@@ -1693,14 +1768,10 @@
 
     .closing__highlight {
       display: inline;
-      background-image: linear-gradient(var(--color-lime-wash), var(--color-lime-wash));
-      background-repeat: no-repeat;
-      background-size: 100% 0.45em;
-      background-position: 0 82%;
+      background-color: var(--color-lime-wash);
       color: var(--color-timber);
       padding: 0 4px;
-      box-decoration-break: clone;
-      -webkit-box-decoration-break: clone;
+      border-radius: 3px;
     }
 
     .closing__monash--simple {
@@ -1715,252 +1786,6 @@
       width: auto;
     }
 
-    /* ─────────────────────────────────────────
-       ACCESS SECTION — EDITORIAL REDESIGN
-       Floating standalone cards on dark bg,
-       editorial pathway split, amber accents
-    ───────────────────────────────────────── */
-
-    /* Heading colours on dark bg */
-    .access .section-label {
-      color: var(--color-lime);
-      opacity: 0.85;
-    }
-    .access .section-heading { color: #ffffff; }
-    .access .section-body    { color: rgba(255, 255, 255, 0.84); }
-
-    /* ── Accordion container: no shared box, stacked cards ── */
-    .access .accordion {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      border-radius: 0;
-      overflow: visible;
-      box-shadow: none;
-      background: transparent;
-    }
-
-    /* Each accordion item: a subtle glass pill on dark bg */
-    .access .accordion-item {
-      border-radius: 14px;
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.11);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.11);
-      transition: background 0.18s ease, box-shadow 0.22s ease, border-color 0.22s ease;
-    }
-
-    .access .accordion-item:last-child {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.11);
-    }
-
-    /* Open item: unfolds into a fully white editorial panel */
-    .access .accordion-item.is-open {
-      background: #ffffff;
-      border-color: rgba(255, 255, 255, 0.20);
-      box-shadow: 0 10px 44px rgba(0, 0, 0, 0.28);
-    }
-
-    /* ── Trigger: collapsed — text on dark bg ── */
-    .access .accordion-trigger {
-      padding: 22px 28px;
-      min-height: 80px;
-      background: transparent;
-    }
-
-    .access .accordion-trigger:hover {
-      background: rgba(255, 255, 255, 0.07);
-    }
-
-    .access .accordion-trigger__title {
-      color: #ffffff;
-    }
-
-    .access .accordion-trigger__sub {
-      color: rgba(255, 255, 255, 0.76);
-    }
-
-    .access .accordion-chevron {
-      color: rgba(255, 255, 255, 0.70);
-    }
-
-    /* ── Trigger: open — dark header stripe inside white card ── */
-    .access .accordion-item.is-open .accordion-trigger,
-    .access .accordion-trigger[aria-expanded="true"] {
-      background: #162016;
-      border-bottom: 3px solid var(--color-forest-primary);
-    }
-
-    .access .accordion-item.is-open .accordion-trigger:hover,
-    .access .accordion-trigger[aria-expanded="true"]:hover {
-      background: #1e2e1e;
-    }
-
-    .access .accordion-item.is-open .accordion-trigger__title,
-    .access .accordion-trigger[aria-expanded="true"] .accordion-trigger__title {
-      color: #ffffff;
-    }
-
-    .access .accordion-item.is-open .accordion-trigger__sub,
-    .access .accordion-trigger[aria-expanded="true"] .accordion-trigger__sub {
-      color: rgba(255, 255, 255, 0.84);
-    }
-
-    .access .accordion-item.is-open .accordion-chevron,
-    .access .accordion-trigger[aria-expanded="true"] .accordion-chevron {
-      color: var(--color-lime);
-    }
-
-    /* ── Content area: warm cream, no nested boxes ── */
-    .access .accordion-content {
-      background: #fffdf9;
-      padding: 28px 32px 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .access .accordion-content[hidden] {
-      display: none;
-    }
-
-    /* PiP-Education content: cool green-cream, clearly distinct from PiP Teens */
-    .access .accordion-content--edu {
-      background: #f4faf5;
-    }
-
-    /* Body text on cream bg */
-    .access .accordion-desc {
-      font-size: 15.5px;
-      line-height: 1.72;
-      color: #263326;
-      letter-spacing: -0.18px;
-      margin-bottom: 22px;
-    }
-
-    .access .program-card__cta {
-      margin-top: 0;
-    }
-
-    .access .pathway-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px;
-    }
-
-    .access .program-card__pathway + .program-card__pathway {
-      border-left: 1px solid #d0e6d0;
-      padding-left: 28px;
-    }
-
-    .access .program-card__pathway-label {
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: -0.18px;
-      text-transform: none;
-      color: #263326;
-      line-height: 1.38;
-    }
-
-    /* Email CTA: strip the heavy box, use a hairline top border */
-    .access .email-cta {
-      background: transparent;
-      border: none;
-      border-left: none;
-      border-radius: 0;
-      border-top: 1px solid #d0e6d0;
-      padding: 18px 0 0;
-      margin-top: 22px;
-    }
-
-    /* ── Pathway editorial split: two columns with hairline divider ── */
-    .pathway-split {
-      display: grid;
-      grid-template-columns: 1fr 1px 1fr;
-      align-items: start;
-    }
-
-    .pathway-divider {
-      background: #cfe4cf;
-      align-self: stretch;
-      margin: 0 36px;
-    }
-
-    .pathway-col {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    /* Pathway label: amber uppercase — acts as the category accent */
-    .pathway-col .program-card__pathway-label {
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 1.1px;
-      text-transform: uppercase;
-      color: var(--color-amber-text);
-      background: none;
-      border: none;
-      padding: 0;
-    }
-
-    /* Pathway body: clean dark text on cream — matches .access .accordion-desc */
-    .pathway-col .program-card__pathway-text {
-      font-size: 15.5px;
-      line-height: 1.72;
-      color: #263326;
-      letter-spacing: -0.18px;
-    }
-
-    .pathway-col .program-card__pathway-text a {
-      color: var(--color-forest-primary);
-      font-weight: 500;
-    }
-
-    .pathway-col .program-card__cta {
-      margin-top: 8px;
-    }
-
-    /* CTA buttons in access section */
-    .access .btn-primary {
-      font-size: 14.5px;
-      padding: 12px 22px;
-    }
-
-    @media (max-width: 680px) {
-      .access .pathway-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .access .program-card__pathway + .program-card__pathway {
-        border-left: 0;
-        border-top: 1px solid #d0e6d0;
-        padding-left: 0;
-        padding-top: 24px;
-      }
-
-      .pathway-split {
-        grid-template-columns: 1fr;
-      }
-      .pathway-divider {
-        height: 1px;
-        width: 100%;
-        background: #cfe4cf;
-        margin: 20px 0;
-        align-self: auto;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .access .accordion-trigger {
-        padding: 18px 20px;
-        min-height: unset;
-      }
-      .access .accordion-content {
-        padding: 20px 20px 24px;
-      }
-    }
 
     /* 7plus wellness image */
     .wellness__7plus-wrap {
@@ -2024,9 +1849,8 @@
     .browser-mockup {
       background: #ffffff;
       border: 1px solid #d4e4d4;
-      border-radius: 10px;
+      border-radius: 6px;
       overflow: hidden;
-      box-shadow: var(--shadow-sm);
     }
 
     .browser-mockup__bar {
@@ -2104,14 +1928,8 @@
     .browser-mockup__card-row--sm { width: 55%; }
     .browser-mockup__card-row--md { width: 80%; }
 
-    @media (max-width: 900px) {
-      .feature-tile--lifestyle { grid-column: span 2; }
-    }
-
-    @media (max-width: 640px) {
-      .feature-tile--lifestyle { grid-column: span 1; }
-      .feature-tile--lifestyle > .feature-tile__inner { flex-direction: column; }
-      .feature-tile__lifestyle-preview { flex: 0 0 auto; width: 100%; }
+    @media (max-width: 915px) {
+      .feature-tile--lifestyle { grid-column: 1 !important; }
     }
 
     /* ── Playful tilt tiles ── */
@@ -2143,7 +1961,6 @@
     .motion-reveal.is-visible.feature-tile--tilt-left:hover,
     .motion-reveal.is-visible.feature-tile--tilt-right:hover {
       transform: rotate(0deg);
-      box-shadow: var(--shadow-sm), var(--shadow-card);
     }
 
     /* ── "Free to join" cost headline ── */
@@ -2163,7 +1980,7 @@
     .access .section-heading {
       font-size: 50px;
       letter-spacing: -1.3px;
-      color: #ffffff;
+      color: var(--color-deep-forest);
     }
 
     @media (max-width: 900px) {
@@ -2298,6 +2115,96 @@
         transform: none;
       }
     }
+
+    /* ─────────────────────────────────────────
+       DISPLAY HEADINGS — Outfit font
+    ───────────────────────────────────────── */
+    .hero__title,
+    .section-heading,
+    .wellness__heading,
+    .closing__heading {
+      font-family: var(--font-display);
+      font-weight: 700;
+    }
+
+    /* ─────────────────────────────────────────
+       HERO — Centred single-column layout
+    ───────────────────────────────────────── */
+    .hero {
+      text-align: center;
+    }
+
+    .hero__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 960px;
+      margin: 0 auto;
+      gap: 0;
+      /* override the default two-column grid */
+      grid-template-columns: unset;
+    }
+
+    .hero__content {
+      width: 100%;
+    }
+
+    .hero__body {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 18px;
+    }
+
+    .hero__actions {
+      justify-content: center;
+    }
+
+    /* Hide hero image in centred layout */
+    .hero__image {
+      display: none;
+    }
+
+    /* ─────────────────────────────────────────
+       HERO BODY PHRASE HIGHLIGHTS + ANIMATION
+    ───────────────────────────────────────── */
+    @keyframes pipHighlightReveal {
+      from { background-size: 0% 88%; }
+      to   { background-size: 100% 88%; }
+    }
+
+    .hero__hl1,
+    .hero__hl2 {
+      background-repeat: no-repeat;
+      background-position: 0 62%;
+      background-size: 0% 88%;
+      border-radius: 3px;
+      padding: 0 3px;
+      font-weight: 600;
+    }
+
+    /* "decades of research" — warm amber */
+    .hero__hl1 {
+      background-color: var(--color-amber-wash);
+      color: var(--color-amber-text);
+      border-radius: 3px;
+      padding: 0 3px;
+    }
+
+    /* "international expert advice" — forest green */
+    .hero__hl2 {
+      background-color: var(--color-lime-wash);
+      color: var(--color-deep-forest);
+      border-radius: 3px;
+      padding: 0 3px;
+    }
+
+    /* Access section: keep section-body readable on dark bg */
+    .access .section-body {
+      color: var(--color-timber-muted);
+      max-width: 580px;
+      margin-top: var(--spacing-16);
+    }
   </style>
 </head>
 <body>
@@ -2384,19 +2291,17 @@
 
             <h1 class="hero__title" id="hero-heading">
               Welcome to<br>
-              Partners in<br>
-              <span class="accent">Parenting</span> (PiP)!
+              Partners in <span class="accent">Parenting</span> (PiP)
             </h1>
 
             <p class="hero__body">
-              PiP is an award-winning, evidence-based online parenting program designed to help you raise your child with confidence, and support their mental health. PiP is based on decades of research evidence and international expert consensus about what parents can do to reduce the risk of common mental health problems like depression and anxiety in their child.
+              PiP is built on <span class="hero__hl1">decades of research</span> and <span class="hero__hl2">international expert advice</span>, giving parents practical ways to support their child's mental health and wellbeing.
             </p>
 
-            <!-- [3] Clearer CTAs -->
             <div class="hero__actions">
               <a href="#access" class="btn btn-primary">
-                Get started with PiP
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                Explore PiP programs
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
               </a>
             </div>
           </div>
@@ -2411,15 +2316,290 @@
     </section>
 
 
-    <!-- Wave: hero (sage-canvas #f4f8f4) → involved (sage-panel #edf4ed) -->
-    <div class="wave-sep" aria-hidden="true" style="background: #f4f8f4;">
-      <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,0 C240,56 480,56 720,28 C960,0 1200,56 1440,28 L1440,56 L0,56 Z" fill="#edf4ed"/>
+
+    <!-- ═══════════════════════════════════════
+         SECTION 2 — HOW CAN PiP SUPPORT YOU AND YOUR CHILD?
+    ═══════════════════════════════════════ -->
+    <section class="access" id="access" aria-labelledby="access-heading" style="background-color: rgb(247, 240, 218)">
+      <div class="container">
+
+        <div class="access__header">
+          <h2 class="section-heading" id="access-heading">How can PiP support<br>you and your child?</h2>
+          <p class="section-body">PiP offers programs for a range of ages and concerns. Choose your child's age group below to see what's available for your family.</p>
+        </div>
+
+        <!-- Tab navigation -->
+        <div class="access__tab-wrap">
+          <p class="access__tab-label">I'm a parent of...</p>
+          <div class="access__tabs" role="tablist" aria-label="PiP program categories">
+            <button
+              class="access__tab is-active"
+              role="tab"
+              id="tab-teens"
+              aria-selected="true"
+              aria-controls="panel-teens"
+              onclick="switchTab(event, 'teens')"
+            >
+              <span class="access__tab-title">Teenagers</span><span class="access__tab-age">(aged ~12–18 years)</span>
+            </button>
+            <button
+              class="access__tab"
+              role="tab"
+              id="tab-kids"
+              aria-selected="false"
+              aria-controls="panel-kids"
+              onclick="switchTab(event, 'kids')"
+            >
+              <span class="access__tab-title">Primary School Children</span><span class="access__tab-age">(aged ~5–11 years)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── PANEL: Teenagers ── -->
+        <div
+          class="access__panel is-active"
+          id="panel-teens"
+          role="tabpanel"
+          aria-labelledby="tab-teens"
+         style="padding: 0px">
+          <div class="access__card">
+            <p class="access__options-note">Here are the PiP programs currently available for this age group:</p>
+            <div class="accordion" role="list">
+
+              <!-- Accordion: PiP (Teens) Victoria -->
+              <div class="accordion-item" role="listitem">
+                <button
+                  class="accordion-trigger"
+                  aria-expanded="false"
+                  aria-controls="acc-teens-victoria"
+                  onclick="toggleAccordion(this)"
+                >
+                  <div class="accordion-trigger__main">
+                    <p class="accordion-trigger__title">PiP (Teens) Victoria</p>
+                    <p class="accordion-trigger__sub">A specific research trial for Victorian families focused on teen anxiety access.</p>
+                  </div>
+                  <div class="accordion-trigger__meta">
+                    <span class="accordion-learn-more" aria-hidden="true">
+                      Learn more
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                  </div>
+                </button>
+                <div class="accordion-content" id="acc-teens-victoria" hidden>
+                  <p class="accordion-desc">If you live in Victoria and are concerned about emerging anxiety or depression in your teen, check out our latest research trial: <a href="https://p2p.partnersinparenting.com.au/" target="_blank" rel="noopener noreferrer"><strong>Improving access to PiP in the community</strong></a>. Parents in this trial will be offered either a self-guided or peer-guided version of PiP.</p>
+                  <div class="program-card__cta">
+                    <a href="https://p2p.partnersinparenting.com.au/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                      Join the research trial
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion: PiP via headspace -->
+              <div class="accordion-item" role="listitem">
+                <button
+                  class="accordion-trigger"
+                  aria-expanded="false"
+                  aria-controls="acc-teens-headspace"
+                  onclick="toggleAccordion(this)"
+                >
+                  <div class="accordion-trigger__main">
+                    <p class="accordion-trigger__title">PiP via headspace</p>
+                    <p class="accordion-trigger__sub">Support for parents of young people aged 12–25 across Australia.</p>
+                  </div>
+                  <div class="accordion-trigger__meta">
+                    <span class="accordion-learn-more" aria-hidden="true">
+                      Learn more
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                  </div>
+                </button>
+                <div class="accordion-content" id="acc-teens-headspace" hidden>
+                  <p class="accordion-desc">If you live in Australia and are interested in prevention or early intervention for anxiety and depression in your teen, you can <a href="https://headspace.org.au/online-and-phone-support/partners-in-parenting/" target="_blank" rel="noopener noreferrer">access PiP via headspace</a>.</p>
+                  <div class="program-card__cta">
+                    <a href="https://headspace.org.au/online-and-phone-support/partners-in-parenting/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                      Visit headspace
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion: PiP General Support -->
+              <div class="accordion-item" role="listitem">
+                <button
+                  class="accordion-trigger"
+                  aria-expanded="false"
+                  aria-controls="acc-teens-general"
+                  onclick="toggleAccordion(this)"
+                >
+                  <div class="accordion-trigger__main">
+                    <p class="accordion-trigger__title"><strong>PiP-Education</strong></p>
+                    <p class="accordion-trigger__sub">Our core evidence-based program for preventing teen depression.</p>
+                  </div>
+                  <div class="accordion-trigger__meta">
+                    <span class="accordion-learn-more" aria-hidden="true">
+                      Learn more
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                  </div>
+                </button>
+                <div class="accordion-content" id="acc-teens-general" hidden>
+                  <p class="accordion-desc">If your teen struggles to attend school due to emotional distress (sometimes called 'school refusal' or 'school can't'): check out the PiP-Education program. Please note we will also be launching a new version of PiP-Education, with additional 1:1 coaching support, as part of a research trial in late 2026. Please contact <a href="mailto:med-pip-ed@monash.edu">med-pip-ed@monash.edu</a> if you would like to be informed about this program.</p>
+                  <div class="program-card__cta">
+                    <a href="https://pip-ed.web.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                      Access PiP-Education
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                  </div>
+                  <div class="email-cta" aria-label="Contact email">
+                    <div class="email-cta__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/>
+                      </svg>
+                    </div>
+                    <div class="email-cta__content">
+                      <p class="email-cta__label">To be informed about the new 2026 trial</p>
+                      <a href="mailto:med-pip-ed@monash.edu" class="email-cta__address">med-pip-ed@monash.edu</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ── PANEL: Primary School Children ── -->
+        <div
+          class="access__panel"
+          id="panel-kids"
+          role="tabpanel"
+          aria-labelledby="tab-kids"
+          hidden
+         style="padding: 0px">
+          <div class="access__card">
+            <p class="access__options-note">Here are the PiP programs currently available for this age group:</p>
+            <div class="accordion" role="list">
+
+              <!-- Accordion: PiP Kids -->
+              <div class="accordion-item" role="listitem">
+                <button
+                  class="accordion-trigger"
+                  aria-expanded="false"
+                  aria-controls="acc-kids-pip"
+                  onclick="toggleAccordion(this)"
+                >
+                  <div class="accordion-trigger__main">
+                    <p class="accordion-trigger__title">PiP Kids</p>
+                    <p class="accordion-trigger__sub">Prevention of anxiety and depression in primary school-aged children.</p>
+                  </div>
+                  <div class="accordion-trigger__meta">
+                    <span class="accordion-learn-more" aria-hidden="true">
+                      Learn more
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                  </div>
+                </button>
+                <div class="accordion-content" id="acc-kids-pip" hidden>
+                  <p class="accordion-desc">If you are a parent of a primary school-aged child and are interested in strategies to reduce your child's risk of anxiety or depression, you can access <a href="https://pipkids.partnersinparenting.com.au/" target="_blank" rel="noopener noreferrer">PiP Kids</a> online from anywhere in the world.</p>
+                  <div class="program-card__cta">
+                    <a href="https://pipkids.partnersinparenting.com.au/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                      Access PiP Kids
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion: PiP Kids-Autism -->
+              <div class="accordion-item" role="listitem">
+                <button
+                  class="accordion-trigger"
+                  aria-expanded="false"
+                  aria-controls="acc-kids-autism"
+                  onclick="toggleAccordion(this)"
+                >
+                  <div class="accordion-trigger__main">
+                    <p class="accordion-trigger__title">PiP Kids-Autism</p>
+                    <p class="accordion-trigger__sub">For parents of autistic children.</p>
+                  </div>
+                  <div class="accordion-trigger__meta">
+                    <span class="accordion-learn-more" aria-hidden="true">
+                      Learn more
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                  </div>
+                </button>
+                <div class="accordion-content" id="acc-kids-autism" hidden>
+                  <p class="accordion-desc">Our research team has also co-designed a version of PiP Kids for parents of autistic children, called PiP Kids-Autism. Although our research trial ended in 2025, we are working on making the program more widely available to the community. If you would like to partner with us or be informed when the program is available, please email <a href="mailto:pipkids-autism@monash.edu">pipkids-autism@monash.edu</a>.</p>
+                  <div class="email-cta" aria-label="Contact email">
+                    <div class="email-cta__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/>
+                      </svg>
+                    </div>
+                    <div class="email-cta__content">
+                      <p class="email-cta__label">Partner with us or get notified</p>
+                      <a href="mailto:pipkids-autism@monash.edu" class="email-cta__address">pipkids-autism@monash.edu</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion: PiP Kids-Education -->
+              <div class="accordion-item" role="listitem">
+                <button
+                  class="accordion-trigger"
+                  aria-expanded="false"
+                  aria-controls="acc-kids-edu"
+                  onclick="toggleAccordion(this)"
+                >
+                  <div class="accordion-trigger__main">
+                    <p class="accordion-trigger__title">PiP Kids-Education</p>
+                    <p class="accordion-trigger__sub">For primary school-aged children with school refusal.</p>
+                  </div>
+                  <div class="accordion-trigger__meta">
+                    <span class="accordion-learn-more" aria-hidden="true">
+                      Learn more
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                  </div>
+                </button>
+                <div class="accordion-content" id="acc-kids-edu" hidden>
+                  <p class="accordion-desc">We are also currently developing a version of PiP Kids for parents of primary school-aged children who have difficulty attending school due to emotional distress (sometimes called 'school refusal' or 'school can't'). This program will be available as part of a research trial in late 2026 to early 2027. If you would like to be informed when the program is available, please email <a href="mailto:pipkids-ed@monash.edu">pipkids-ed@monash.edu</a>.</p>
+                  <div class="email-cta" aria-label="Contact email">
+                    <div class="email-cta__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/>
+                      </svg>
+                    </div>
+                    <div class="email-cta__content">
+                      <p class="email-cta__label">Be informed when the program is available</p>
+                      <a href="mailto:pipkids-ed@monash.edu" class="email-cta__address">pipkids-ed@monash.edu</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Wave: access (#f7f0da) → involved (sage-panel #edf4ed) -->
+    <div class="wave-sep" aria-hidden="true" style="background: #f7f0da;">
+      <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,32 C360,8 1080,56 1440,24 L1440,64 L0,64 Z" fill="#edf4ed"/>
       </svg>
     </div>
 
     <!-- ═══════════════════════════════════════
-         SECTION 2 — WHAT'S INVOLVED?
+         SECTION 3 — WHAT'S INVOLVED?
     ═══════════════════════════════════════ -->
     <section class="involved" id="involved" aria-labelledby="involved-heading">
       <div class="container">
@@ -2432,24 +2612,22 @@
 
           <!-- Right: content -->
           <div class="involved__left">
-            <p class="section-label">Program overview</p>
             <h2 class="section-heading" id="involved-heading">What's involved?</h2>
-            <p class="section-body" style="margin-bottom: var(--spacing-28);">
-              There are different versions of PiP, tailored for parents of children aged 5–18 years, and with different concerns (e.g. prevention of mental health problems, or supporting young people with existing mental health challenges). All versions of PiP include:
-            </p>
+            <p class="section-body" style="margin-bottom: var(--spacing-28); font-weight: 400">There are different versions of PiP, tailored for parents of children aged 5–18 years, and with different concerns. 
+All versions of PiP include:</p>
 
             <ul class="involved__list" aria-label="Program components">
               <li class="involved__list-item">
                 <div class="involved__list-number" aria-hidden="true">1</div>
-                <p class="involved__list-text">Some initial self-reflection questions about your parenting and your child, with personalised feedback</p>
+                <p class="involved__list-text" style="font-size: 16px">Some initial <span class="inline-highlight">self-reflection questions</span> about your parenting and your child, with personalised feedback</p>
               </li>
               <li class="involved__list-item">
                 <div class="involved__list-number" aria-hidden="true">2</div>
-                <p class="involved__list-text">A series of interactive online modules covering common parenting challenges such as communication, managing strong emotions, boundaries, conflicts, and responding to anxiety or worries.</p>
+                <p class="involved__list-text" style="font-size: 16px">A series of <span class="inline-highlight">interactive online modules</span> covering common parenting challenges such as communication, managing strong emotions, boundaries, conflicts, and responding to anxiety or worries.</p>
               </li>
               <li class="involved__list-item">
                 <div class="involved__list-number" aria-hidden="true">3</div>
-                <p class="involved__list-text">Contributing to ongoing evaluation of PiP by completing online surveys before and after the program.</p>
+                <p class="involved__list-text" style="font-size: 16px"><span class="inline-highlight">Contributing to ongoing evaluation</span> of PiP by completing online surveys before and after the program.</p>
               </li>
             </ul>
           </div>
@@ -2459,275 +2637,10 @@
     </section>
 
 
-    <!-- Wave: involved (sage-panel #edf4ed) → access (dark forest #29512A) -->
+    <!-- Wave: involved (sage-panel #edf4ed) → evidence (sage-panel #edf4ed) — decorative -->
     <div class="wave-sep" aria-hidden="true" style="background: #edf4ed;">
-      <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,32 C360,8 1080,56 1440,24 L1440,64 L0,64 Z" fill="#29512A"/>
-      </svg>
-    </div>
-
-    <!-- ═══════════════════════════════════════
-         SECTION 3 — WHERE CAN I ACCESS PiP?  [4]
-    ═══════════════════════════════════════ -->
-    <section class="access" id="access" aria-labelledby="access-heading">
-      <div class="container">
-
-        <div class="access__header">
-          <p class="section-label">What's available</p>
-          <h2 class="section-heading" id="access-heading">Where can I access PiP?</h2>
-        </div>
-
-        <!-- [4] Segmented control tabs -->
-        <div class="access__tab-wrap">
-          <p class="access__tab-label">Select your child's age group:</p>
-          <div class="access__tabs" role="tablist" aria-label="PiP program categories">
-            <button
-              class="access__tab is-active"
-              role="tab"
-              id="tab-teens"
-              aria-selected="true"
-              aria-controls="panel-teens"
-              onclick="switchTab(event, 'teens')"
-            >
-              <span class="access__tab-title">Teenagers</span>
-              <span class="access__tab-age">Aged ~12–18 years</span>
-            </button>
-            <button
-              class="access__tab"
-              role="tab"
-              id="tab-kids"
-              aria-selected="false"
-              aria-controls="panel-kids"
-              onclick="switchTab(event, 'kids')"
-            >
-              <span class="access__tab-title">Primary school children</span>
-              <span class="access__tab-age">Aged ~5–11 years</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- ── PANEL: Teenagers ── -->
-        <div
-          class="access__panel is-active"
-          id="panel-teens"
-          role="tabpanel"
-          aria-labelledby="tab-teens"
-        >
-          <p class="access__options-note">The following versions of PiP are currently available:</p>
-          <div class="accordion" role="list">
-
-            <!-- Accordion: PiP for Teens -->
-            <div class="accordion-item" role="listitem">
-              <button
-                class="accordion-trigger"
-                aria-expanded="false"
-                aria-controls="acc-teens-pip"
-                onclick="toggleAccordion(this)"
-              >
-                <div class="accordion-trigger__main">
-                  <p class="accordion-trigger__title">PiP (Teens)</p>
-                  <p class="accordion-trigger__sub">Prevention and Early Intervention for Anxiety and Depression in Teenagers</p>
-                </div>
-                <div class="accordion-trigger__meta">
-                  <span class="program-card__tag tag-trial">Research Trial Available</span>
-                  <span class="accordion-chevron" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                  </span>
-                </div>
-              </button>
-              <div class="accordion-content" id="acc-teens-pip" hidden>
-                <div class="pathway-split">
-                  <div class="pathway-col">
-                    <p class="program-card__pathway-label">I live in Victoria</p>
-                    <p class="program-card__pathway-text">If you live in Victoria and are concerned about emerging anxiety or depression in your teen, check out our latest research trial: <a href="https://p2p.partnersinparenting.com.au/" target="_blank" rel="noopener noreferrer"><strong>Improving access to PiP in the community</strong></a>. Parents in this trial will be offered either a self-guided or peer-guided version of PiP.</p>
-                    <div class="program-card__cta">
-                      <a href="https://p2p.partnersinparenting.com.au/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                        Join the research trial
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="pathway-divider"></div>
-                  <div class="pathway-col">
-                    <p class="program-card__pathway-label">I live anywhere else in Australia</p>
-                    <p class="program-card__pathway-text">If you live in Australia and are interested in prevention or early intervention for anxiety and depression in your teen, you can <a href="https://headspace.org.au/online-and-phone-support/partners-in-parenting/" target="_blank" rel="noopener noreferrer">access PiP via headspace</a>.</p>
-                    <div class="program-card__cta">
-                      <a href="https://headspace.org.au/online-and-phone-support/partners-in-parenting/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                        Visit headspace
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Accordion: PiP-Education -->
-            <div class="accordion-item" role="listitem">
-              <button
-                class="accordion-trigger"
-                aria-expanded="false"
-                aria-controls="acc-teens-edu"
-                onclick="toggleAccordion(this)"
-              >
-                <div class="accordion-trigger__main">
-                  <p class="accordion-trigger__title">PiP-Education</p>
-                  <p class="accordion-trigger__sub">For teens with school refusal</p>
-                </div>
-                <div class="accordion-trigger__meta">
-                  <span class="program-card__tag tag-available">Available</span>
-                  <span class="accordion-chevron" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                  </span>
-                </div>
-              </button>
-              <div class="accordion-content" id="acc-teens-edu" hidden>
-                <p class="accordion-desc">If your teen struggles to attend school due to emotional distress (sometimes called 'school refusal' or 'school can't'): check out the <a href="https://pip-ed.web.app/" target="_blank" rel="noopener noreferrer">PiP-Education program</a>. Please note we will also be launching a new version of PiP-Education, with additional 1:1 coaching support, as part of a research trial in late 2026. Please contact <a href="mailto:med-pip-ed@monash.edu">med-pip-ed@monash.edu</a> if you would like to be informed about this program.</p>
-                <div class="program-card__cta">
-                  <a href="https://pip-ed.web.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                    Access PiP-Education
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  </a>
-                </div>
-                <div class="email-cta" aria-label="Contact email">
-                  <div class="email-cta__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/>
-                    </svg>
-                  </div>
-                  <div class="email-cta__content">
-                    <p class="email-cta__label">To be informed about the new 2026 trial</p>
-                    <a href="mailto:med-pip-ed@monash.edu" class="email-cta__address">med-pip-ed@monash.edu</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- ── PANEL: Primary School Kids ── -->
-        <div
-          class="access__panel"
-          id="panel-kids"
-          role="tabpanel"
-          aria-labelledby="tab-kids"
-          hidden
-        >
-          <p class="access__options-note">The following versions of PiP are currently available:</p>
-          <div class="accordion" role="list">
-
-            <!-- Accordion: PiP Kids -->
-            <div class="accordion-item" role="listitem">
-              <button
-                class="accordion-trigger"
-                aria-expanded="false"
-                aria-controls="acc-kids-pip"
-                onclick="toggleAccordion(this)"
-              >
-                <div class="accordion-trigger__main">
-                  <p class="accordion-trigger__title">PiP Kids</p>
-                  <p class="accordion-trigger__sub">Prevention of anxiety and depression in primary school-aged children</p>
-                </div>
-                <div class="accordion-trigger__meta">
-                  <span class="program-card__tag tag-available">Available Now</span>
-                  <span class="accordion-chevron" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                  </span>
-                </div>
-              </button>
-              <div class="accordion-content" id="acc-kids-pip" hidden>
-                <p class="accordion-desc">If you are a parent of a primary school-aged child and are interested in strategies to reduce your child's risk of anxiety or depression, you can access <a href="https://pipkids.partnersinparenting.com.au/" target="_blank" rel="noopener noreferrer">PiP Kids</a> online from anywhere in the world.</p>
-                <div class="program-card__cta">
-                  <a href="https://pipkids.partnersinparenting.com.au/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                    Access PiP Kids
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Accordion: PiP Kids-Autism -->
-            <div class="accordion-item" role="listitem">
-              <button
-                class="accordion-trigger"
-                aria-expanded="false"
-                aria-controls="acc-kids-autism"
-                onclick="toggleAccordion(this)"
-              >
-                <div class="accordion-trigger__main">
-                  <p class="accordion-trigger__title">PiP Kids-Autism</p>
-                  <p class="accordion-trigger__sub">For parents of autistic children</p>
-                </div>
-                <div class="accordion-trigger__meta">
-                  <span class="program-card__tag tag-coming">Coming Soon</span>
-                  <span class="accordion-chevron" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                  </span>
-                </div>
-              </button>
-              <div class="accordion-content" id="acc-kids-autism" hidden>
-                <p class="accordion-desc">Our research team has also co-designed a version of PiP Kids for parents of autistic children, called PiP Kids-Autism. Although our research trial ended in 2025, we are working on making the program more widely available to the community. If you would like to partner with us or be informed when the program is available, please email <a href="mailto:pipkids-autism@monash.edu">pipkids-autism@monash.edu</a>.</p>
-                <div class="email-cta" aria-label="Contact email">
-                  <div class="email-cta__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/>
-                    </svg>
-                  </div>
-                  <div class="email-cta__content">
-                    <p class="email-cta__label">Partner with us or get notified</p>
-                    <a href="mailto:pipkids-autism@monash.edu" class="email-cta__address">pipkids-autism@monash.edu</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Accordion: PiP Kids-Education -->
-            <div class="accordion-item" role="listitem">
-              <button
-                class="accordion-trigger"
-                aria-expanded="false"
-                aria-controls="acc-kids-edu"
-                onclick="toggleAccordion(this)"
-              >
-                <div class="accordion-trigger__main">
-                  <p class="accordion-trigger__title">PiP Kids-Education</p>
-                  <p class="accordion-trigger__sub">For primary school-aged children with school refusal</p>
-                </div>
-                <div class="accordion-trigger__meta">
-                  <span class="program-card__tag tag-coming">Research Trial 2026–27</span>
-                  <span class="accordion-chevron" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                  </span>
-                </div>
-              </button>
-              <div class="accordion-content" id="acc-kids-edu" hidden>
-                <p class="accordion-desc">We are also currently developing a version of PiP Kids for parents of primary school-aged children who have difficulty attending school due to emotional distress (sometimes called 'school refusal' or 'school can't'). This program will be available as part of a research trial in late 2026 to early 2027. If you would like to be informed when the program is available, please email <a href="mailto:pipkids-ed@monash.edu">pipkids-ed@monash.edu</a>.</p>
-                <div class="email-cta" aria-label="Contact email">
-                  <div class="email-cta__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/>
-                    </svg>
-                  </div>
-                  <div class="email-cta__content">
-                    <p class="email-cta__label">Be informed when the program is available</p>
-                    <a href="mailto:pipkids-ed@monash.edu" class="email-cta__address">pipkids-ed@monash.edu</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- Wave: access (dark forest #29512A) → evidence (sage-panel #edf4ed) -->
-    <div class="wave-sep" aria-hidden="true" style="background: #29512A;">
-      <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,24 C360,56 1080,8 1440,32 L1440,64 L0,64 Z" fill="#edf4ed"/>
+      <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 C240,56 480,56 720,28 C960,0 1200,56 1440,28 L1440,56 L0,56 Z" fill="#edf4ed" opacity="0.6"/>
       </svg>
     </div>
 
@@ -2737,13 +2650,12 @@
     ═══════════════════════════════════════ -->
     <section class="evidence" id="evidence" aria-labelledby="evidence-heading">
       <div class="container">
-        <p class="section-label">Research &amp; impact</p>
         <h2 class="section-heading" id="evidence-heading" style="margin-bottom: var(--spacing-36);">The evidence behind PiP</h2>
 
         <div class="evidence__grid">
 
           <!-- Card 1: Evidence-Based -->
-          <div class="evidence__card">
+          <div class="evidence__card" style="border-width: 6px; border-style: solid; border-color: rgb(212, 240, 204)">
             <div class="evidence__card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-forest-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 11l3 3L22 4"/>
@@ -2767,7 +2679,7 @@
           </div>
 
           <!-- Card 2: 5,000+ Families -->
-          <div class="evidence__card">
+          <div class="evidence__card" style="border-width: 6px; border-style: solid; border-color: rgb(204, 240, 212)">
             <div class="evidence__card-stat" data-count-to="5000" data-count-suffix="+" aria-label="5,000 plus families helped">0+</div>
             <div>
               <h3 class="evidence__card-heading">Families helped</h3>
@@ -2849,7 +2761,6 @@
       <div class="container">
 
         <div class="features__header">
-          <p class="section-label">Program features</p>
           <h2 class="section-heading" id="features-heading">What's in store for you?</h2>
           <p class="section-body" style="max-width: 640px;">
             PiP aims to empower you to parent your child with confidence. The program includes practical, evidence-based and expert-endorsed strategies designed to build your skills and confidence in ways that may reduce the risk or impact of depression and anxiety problems in your child's life.
@@ -2859,7 +2770,7 @@
         <div class="features__grid">
 
           <!-- Tile 1: Personalised Feedback -->
-          <div class="feature-tile feature-tile--tilt-left">
+          <div class="feature-tile feature-tile--tilt-left" style="line-height: 6; border-width: 6px; border-style: solid; border-color: rgb(212, 240, 204)">
             <div class="feature-tile__icon feature-tile__icon--green" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-forest-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="8" r="4"/>
@@ -2871,7 +2782,7 @@
           </div>
 
           <!-- Tile 2: Interactive Modules — wide, same flex layout as all others, image removed -->
-          <div class="feature-tile feature-tile--wide">
+          <div class="feature-tile feature-tile--wide" style="border-width: 6px; border-style: solid; border-color: rgb(255, 231, 201)">
             <div class="feature-tile__icon feature-tile__icon--amber" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
@@ -2886,7 +2797,7 @@
           </div>
 
           <!-- Tile 3: Fits Your Lifestyle — wide with browser preview -->
-          <div class="feature-tile feature-tile--lifestyle">
+          <div class="feature-tile feature-tile--lifestyle" style="border-width: 6px; border-style: solid; border-color: rgb(212, 240, 204)">
             <div class="feature-tile__inner">
               <div class="feature-tile__lifestyle-text">
                 <div class="feature-tile__icon feature-tile__icon--green" aria-hidden="true">
@@ -2910,7 +2821,7 @@
           </div>
 
           <!-- Tile 4: Interactive Modules -->
-          <div class="feature-tile feature-tile--tilt-right">
+          <div class="feature-tile feature-tile--tilt-right" style="border-width: 6px; border-style: solid; border-color: rgb(212, 240, 204)">
             <div class="feature-tile__icon feature-tile__icon--sage" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-timber-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
@@ -2922,7 +2833,7 @@
           </div>
 
           <!-- Tile 5: Free to Join — green accent tile, full width -->
-          <div class="feature-tile feature-tile--green" style="grid-column: span 3;">
+          <div class="feature-tile feature-tile--green" style="grid-column: span 3; border-width: 6px; border-style: solid; border-color: rgb(78, 151, 88)">
             <div class="feature-tile__icon feature-tile__icon--white" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
@@ -2953,7 +2864,7 @@
     <section class="closing" id="closing" aria-labelledby="closing-heading">
       <div class="container">
         <div class="closing__inner">
-          <h2 class="closing__heading closing__heading--centered" id="closing-heading">
+          <h2 class="closing__heading closing__heading--centered" id="closing-heading" style="width: 720px">
             Contribute to important research on <span class="closing__highlight">parenting &amp; child mental health</span> by <span class="closing__nowrap">Monash University.</span>
           </h2>
 
@@ -3005,8 +2916,8 @@
         </div>
 
         <!-- Col 3: PiP+ account notice -->
-        <div class="footer__pip-notice" role="note" aria-label="Existing PiP+ account notice">
-          <p class="footer__pip-notice-heading">Do you have an existing account for PiP+?</p>
+        <div class="footer__pip-notice" role="note" aria-label="Existing PiP+ account notice" style="border-width: 6px">
+          <p class="footer__pip-notice-heading" style="font-size: 26px">Do you have an existing account for PiP+?</p>
           <p class="footer__pip-notice-body">
             The previous version of PiP+ at partnersinparenting.com.au is no longer taking new registrations. If you already signed up, you can still access your account.
           </p>
